@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "eSignFixture.h"
+#include "movieToeSign.h"
 #include "hEvents.h"
 // The event system used by hGui
 // Can also be used to create new events and listeners
@@ -39,7 +39,7 @@ class testApp : public ofBaseApp, public hObject{
 
         int gridRes;
 
-        eSignFixture eSign1;
+        //eSignFixture eSign1;
 
 
         ofTrueTypeFont * font;
@@ -59,6 +59,9 @@ class testApp : public ofBaseApp, public hObject{
 
         bool bEdit;
 
+        hTabBox *  mainTabBox;
+
+        movieToeSign Maze;
 
 };
 

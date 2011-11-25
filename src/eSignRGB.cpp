@@ -2,11 +2,9 @@
 
 eSignRGB::eSignRGB()
 {
-    //ofRegisterMouseEvents(this);
-    bFixtureSet = false;
-    c.r=0;
-    c.g=0;
-    c.b=0;
+    LEDColor.r=0;
+    LEDColor.g=0;
+    LEDColor.b=0;
 }
 
 eSignRGB::~eSignRGB()
@@ -14,38 +12,13 @@ eSignRGB::~eSignRGB()
     //dtor
 }
 
-
-
-
-void eSignRGB::setColor(unsigned char R, unsigned char G, unsigned char B)
+void eSignRGB::setColor(ofColor c)
 {
-    c.r = R;
-    c.g = G;
-    c.b = B;
+    LEDColor = c;
 }
 
 
-//void RGBfixture::draw(float x, float y, float width, float height)
-//{
-//    ofPushMatrix();
-//    ofPushStyle();
-//    fixtureRect = ofRectangle(x,y,width,height);
-//    ofSetColor((unsigned char)c.r,(unsigned char)c.g,(unsigned char)c.b);
-//    ofFill();
-//    ofRect(fixtureRect);
-//    ofNoFill();
-//    ofSetColor(0);
-//    ofRect(fixtureRect);
-//    ofPopStyle();
-//    ofPopMatrix();
-//}
-
-//void RGBfixture::setFixutre()
-//{
-//    //if mouse click coordinates are inside of fixture rect
-//    //toggle the bFixtureSet flag
-//
-//
-//
-//
-//}
+ofColor eSignRGB::getColor()
+{
+    return LEDColor;
+}

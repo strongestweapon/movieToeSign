@@ -252,8 +252,8 @@ obj/x86_64Debug/./src/eSignFixture.d: src/eSignFixture.cpp \
  ../../../libs/openFrameworks/video/ofVideoPlayer.h \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
- ../../../libs/openFrameworks/3d/ofEasyCam.h src/eSignRGBColumn.h \
- src/eSignRGB.h
+ ../../../libs/openFrameworks/3d/ofEasyCam.h src/eSignPort.h \
+ src/eSignRGBColumn.h src/eSignRGB.h
 
 src/eSignFixture.h:
 
@@ -812,6 +812,8 @@ src/eSignFixture.h:
 ../../../libs/openFrameworks/3d/ofCamera.h:
 
 ../../../libs/openFrameworks/3d/ofEasyCam.h:
+
+src/eSignPort.h:
 
 src/eSignRGBColumn.h:
 

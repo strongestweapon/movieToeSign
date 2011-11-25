@@ -11,9 +11,6 @@ eSignRGBColumn::~eSignRGBColumn()
     //dtor
 }
 
-
-
-
 void eSignRGBColumn::setup(float x, float y, int LEDNumber, bool direction, float rectSize)
 {
     //1. save column x,y postion
@@ -48,9 +45,13 @@ void eSignRGBColumn::setup(float x, float y, int LEDNumber, bool direction, floa
 
 void eSignRGBColumn::setColor(ofColor c)
 {
-    columnColor.r=c.r;
-    columnColor.g=c.g;
-    columnColor.b=c.b;
+    columnColor = c;
+
+    for(int i =0; i < eSignRGBs.size();i++)
+    {
+        eSignRGBs[i].setColor(c);
+    }
+
 }
 
 ofColor eSignRGBColumn::getColor()

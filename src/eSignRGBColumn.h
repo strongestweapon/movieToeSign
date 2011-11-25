@@ -8,13 +8,6 @@ class eSignRGBColumn
         eSignRGBColumn();
         virtual ~eSignRGBColumn();
 
-        void mouseDragged(ofMouseEventArgs& args);
-        void mousePressed(ofMouseEventArgs& args);
-        void mouseMoved(ofMouseEventArgs& args);
-        void mouseReleased(ofMouseEventArgs& args);
-
-
-
         vector<eSignRGB> eSignRGBs;
         ofRectangle columnRect;
 
@@ -23,6 +16,9 @@ class eSignRGBColumn
         void setColor(ofColor c);
         ofColor getColor();
         int portNumber;
+
+        ofColor getColorAtPosZ(float z);
+        ofColor getColorForNet(int posN);
 
     protected:
     private:

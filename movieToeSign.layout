@@ -41,7 +41,7 @@
 		<Cursor position="29" topLine="0" />
 	</File>
 	<File name="src/eSignFixture.h" open="1" top="0" tabpos="5">
-		<Cursor position="914" topLine="15" />
+		<Cursor position="413" topLine="0" />
 	</File>
 	<File name="src/eSignRGB.cpp" open="1" top="0" tabpos="10">
 		<Cursor position="191" topLine="0" />
@@ -53,19 +53,25 @@
 		<Cursor position="120" topLine="0" />
 	</File>
 	<File name="src/eSignRGBColumn.h" open="1" top="0" tabpos="7">
-		<Cursor position="609" topLine="1" />
+		<Cursor position="609" topLine="0" />
 	</File>
 	<File name="src/main.cpp" open="1" top="0" tabpos="11">
 		<Cursor position="559" topLine="0" />
 	</File>
-	<File name="src/movieToeSign.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="0" topLine="0" />
+	<File name="src/movieToeSign.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="4116" topLine="139" />
 	</File>
-	<File name="src/movieToeSign.h" open="0" top="0" tabpos="9">
-		<Cursor position="0" topLine="0" />
+	<File name="src/movieToeSign.h" open="1" top="0" tabpos="23">
+		<Cursor position="981" topLine="8" />
+	</File>
+	<File name="src/sceneManager.cpp" open="1" top="1" tabpos="22">
+		<Cursor position="361" topLine="3" />
+	</File>
+	<File name="src/sceneManager.h" open="1" top="0" tabpos="21">
+		<Cursor position="492" topLine="23" />
 	</File>
 	<File name="src/testApp.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="3092" topLine="99" />
+		<Cursor position="3076" topLine="95" />
 	</File>
 	<File name="src/testApp.h" open="1" top="0" tabpos="2">
 		<Cursor position="1308" topLine="0" />

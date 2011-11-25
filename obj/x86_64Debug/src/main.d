@@ -253,7 +253,8 @@ obj/x86_64Debug/./src/main.d: src/main.cpp \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
  ../../../libs/openFrameworks/3d/ofEasyCam.h src/testApp.h \
- src/eSignFixture.h src/eSignRGBColumn.h src/eSignRGB.h \
+ src/movieToeSign.h src/eSignFixture.h src/eSignPort.h \
+ src/eSignRGBColumn.h src/eSignRGB.h \
  ../../../addons/ofxhUtils/src/hEvents/hEvents.h \
  ../../../addons/ofxhUtils/src/hEvents/hSymbols.h \
  ../../../addons/ofxhUtils/src/hEvents/hObject.h \
@@ -842,7 +843,11 @@ obj/x86_64Debug/./src/main.d: src/main.cpp \
 
 src/testApp.h:
 
+src/movieToeSign.h:
+
 src/eSignFixture.h:
+
+src/eSignPort.h:
 
 src/eSignRGBColumn.h:
 

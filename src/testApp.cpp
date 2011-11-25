@@ -54,7 +54,8 @@ void testApp::setup(){
 
     //create tab
     int mainTabBoxWidth = mainPanel->getWidth();
-    hTabBox *  mainTabBox =
+    //hTabBox *  mainTabBox =
+    mainTabBox =
 		gui->addTabBox("mainTabBox", NULL, HGUI_ABSOLUTE_POSITION, ofGetWidth()-300-20, 20, mainTabBoxWidth);
     mainTabBox->addItems(3);
     mainTabBox->setItemLabel(1, "Play");
@@ -108,7 +109,10 @@ void testApp::setup(){
     gridRes = 20;
     ofColor c = ofColor(255,0,0);
 
-    eSign1.setup("168.33.44.1",c);
+
+
+
+    //eSign1.setup("168.33.44.1",c);
 
     mapImg.loadImage("map/map.png");
     bEdit = false;
@@ -163,6 +167,9 @@ void testApp::update(){
 
     fingerMovie.idleMovie();
 
+
+
+
 //    if (0 == eSign1.addColumnGui() || 2 ==eSign1.addColumnGui())
 //    {
 //        cout << eSign1.posX << std::endl;
@@ -180,7 +187,7 @@ void testApp::draw(){
         ofPopStyle();
     }
 	ofSetHexColor(0xFFFFFF);
-   // fingerMovie.draw(20,20);
+    fingerMovie.draw(0,0);
     ofSetHexColor(0x000000);
     unsigned char * pixels = fingerMovie.getPixels();
     // let's move through the "RGB" char array
@@ -191,68 +198,68 @@ void testApp::draw(){
 //    cout << aa << std::endl;
 
 
-    eSign1.setColorFromPixels(pixels);
 
 
-    int meanCnt;
-    int meanR, meanG, meanB;
-    int gridWidth = gridRes;
-    int gridHeight = gridRes;
-    int meanPixCnt=0;
-
-    //mean value mosaic ref: http://naver.gogil.kr/100085780565
-
-    for (int i = 0; i < movWidth; i+=gridRes){
-        for (int j = 0; j < movHeight; j+=gridRes){
-
-            meanCnt =0;
-            meanR=0;meanG=0;meanB=0;
-
-            if((i+gridRes) > movWidth) gridWidth = movWidth%gridRes;
-            else gridWidth=gridRes;
-
-
-            if((j+gridRes) > movHeight) gridHeight = movHeight%gridRes;
-            else gridHeight=gridRes;
-
-            for( int m = 0; m< gridWidth ; m++){
-                for(int n = 0; n<gridHeight ; n++){
-
-                meanR += pixels[(i+m + (j+n)*movWidth)*3];
-                meanG += pixels[(i+m + (j+n)*movWidth)*3 +1];
-                meanB += pixels[(i+m + (j+n)*movWidth)*3 +2];
-
-
-                meanCnt++;
-                }
-            }
-
-            meanR/=meanCnt;
-            meanG/=meanCnt;
-            meanB/=meanCnt;
-
-            ofPushMatrix();
-            ofTranslate(0,0,0);
-            //ofScale(1.5,1.5,1);
-            ofPushStyle();
-            ofRectangle gridRect;
-            //ofSetRectMode(OF_RECTMODE_CENTER);
-            gridRect = ofRectangle(i,j,gridWidth,gridHeight);
-            ofSetColor((unsigned char)meanR,(unsigned char)meanG,(unsigned char)meanB);
-            ofFill();
-            ofRect(gridRect);
-            ofNoFill();
-            ofSetColor(0);
-            ofRect(gridRect);
-            ofPopStyle();
-            ofPopMatrix();
-
-
-
-
-            meanPixCnt++;
-        }
-    }
+//
+//    int meanCnt;
+//    int meanR, meanG, meanB;
+//    int gridWidth = gridRes;
+//    int gridHeight = gridRes;
+//    int meanPixCnt=0;
+//
+//    //mean value mosaic ref: http://naver.gogil.kr/100085780565
+//
+//    for (int i = 0; i < movWidth; i+=gridRes){
+//        for (int j = 0; j < movHeight; j+=gridRes){
+//
+//            meanCnt =0;
+//            meanR=0;meanG=0;meanB=0;
+//
+//            if((i+gridRes) > movWidth) gridWidth = movWidth%gridRes;
+//            else gridWidth=gridRes;
+//
+//
+//            if((j+gridRes) > movHeight) gridHeight = movHeight%gridRes;
+//            else gridHeight=gridRes;
+//
+//            for( int m = 0; m< gridWidth ; m++){
+//                for(int n = 0; n<gridHeight ; n++){
+//
+//                meanR += pixels[(i+m + (j+n)*movWidth)*3];
+//                meanG += pixels[(i+m + (j+n)*movWidth)*3 +1];
+//                meanB += pixels[(i+m + (j+n)*movWidth)*3 +2];
+//
+//
+//                meanCnt++;
+//                }
+//            }
+//
+//            meanR/=meanCnt;
+//            meanG/=meanCnt;
+//            meanB/=meanCnt;
+//
+//            ofPushMatrix();
+//            ofTranslate(0,0,0);
+//            //ofScale(1.5,1.5,1);
+//            ofPushStyle();
+//            ofRectangle gridRect;
+//            //ofSetRectMode(OF_RECTMODE_CENTER);
+//            gridRect = ofRectangle(i,j,gridWidth,gridHeight);
+//            ofSetColor((unsigned char)meanR,(unsigned char)meanG,(unsigned char)meanB);
+//            ofFill();
+//            ofRect(gridRect);
+//            ofNoFill();
+//            ofSetColor(0);
+//            ofRect(gridRect);
+//            ofPopStyle();
+//            ofPopMatrix();
+//
+//
+//
+//
+//            meanPixCnt++;
+//        }
+//    }
 
 
 
@@ -275,7 +282,7 @@ void testApp::draw(){
     }
 
 
-    eSign1.draw();
+
 
 }
 
@@ -342,6 +349,8 @@ void testApp::mousePressed(int x, int y, int button){
 
 
 //cout << "main:" << std::endl;
+
+
 
 
 }
