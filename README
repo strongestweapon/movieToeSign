@@ -1,0 +1,7 @@
+0. Running System
+- Ubuntu 11.10 64bit
+- openframeworks 0.07 pre-release
+- 8GB / i5-2500k / intel graphics card
+
+1. Add ofxhGui addons ref:http://code.google.com/p/ofxhgui/
+  note: if you're using the addon in linux (ubuntu in my case), you need to include float.h explicitly in some files (you'll know when you compile)
