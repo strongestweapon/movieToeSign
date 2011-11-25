@@ -11,6 +11,7 @@ class eSignFixture
 
         void setup(string address, int numOfPorts);
         void addPort();
+        void addColumn(int portNumber, float x, float y, int LEDNumber, bool direction);
         void setColor(ofColor c);
         ofColor getColor();
 

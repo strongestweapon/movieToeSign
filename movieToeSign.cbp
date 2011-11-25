@@ -270,6 +270,12 @@
 		<Unit filename="src/eSignFixture.h">
 			<Option virtualFolder="src/" />
 		</Unit>
+		<Unit filename="src/eSignPort.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/eSignPort.h">
+			<Option virtualFolder="src/" />
+		</Unit>
 		<Unit filename="src/eSignRGB.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>

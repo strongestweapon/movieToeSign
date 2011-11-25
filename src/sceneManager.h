@@ -18,9 +18,9 @@ enum subSceneType
 
 enum effectType
 {
-    NOEFFECT,
-    KINECTINPUT,
-    SOUNDINPUT,
+    NOEFFECT = 4,
+    KINECTINPUT= 5,
+    SOUNDINPUT= 6,
 };
 
 typedef struct metaMov
@@ -43,10 +43,11 @@ class sceneManager
         void loadMovieToEffect(string moviePath, effectType effect);
 
         void playScene(sceneType scene, bool loop);
-        void stopScene();
         void updateScene();
+        void stopScene();
 
-        void palyEffect(sceneType scene, effectType effect);
+        void playEffect(sceneType scene, effectType effect);
+        void updateEffect(effectType effect);
         void stopEffect(effectType effect);
 
         unsigned char * getPixels();
@@ -54,8 +55,15 @@ class sceneManager
         ofRectangle getEffectSize();
 
     private:
+        sceneType currentScene;
+        int currentMovie;
+        effectType currentEffect;
+        int currentEffect;
         ofRectangle movieRect;
         ofRectangle effectRect;
+
+        int getMovieID(int type);
+
 
 
 };

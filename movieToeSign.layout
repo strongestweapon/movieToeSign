@@ -19,10 +19,10 @@
 	<File name="../../../addons/ofxhGui/src/hTextArea.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="5414" topLine="8" />
 	</File>
-	<File name="../../../addons/ofxhGui/src/hWidget.cpp" open="1" top="0" tabpos="4">
+	<File name="../../../addons/ofxhGui/src/hWidget.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="5977" topLine="208" />
 	</File>
-	<File name="../../../addons/ofxhGui/src/hWidget.h" open="1" top="0" tabpos="3">
+	<File name="../../../addons/ofxhGui/src/hWidget.h" open="0" top="0" tabpos="3">
 		<Cursor position="2523" topLine="44" />
 	</File>
 	<File name="../../../addons/ofxhUtils/src/hEvents/hEvents.h" open="0" top="0" tabpos="3">
@@ -37,43 +37,49 @@
 	<File name="config.make" open="0" top="0" tabpos="4">
 		<Cursor position="298" topLine="0" />
 	</File>
-	<File name="src/eSignFixture.cpp" open="1" top="0" tabpos="6">
+	<File name="src/eSignFixture.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="29" topLine="0" />
 	</File>
-	<File name="src/eSignFixture.h" open="1" top="0" tabpos="5">
-		<Cursor position="413" topLine="0" />
+	<File name="src/eSignFixture.h" open="1" top="0" tabpos="7">
+		<Cursor position="254" topLine="0" />
 	</File>
-	<File name="src/eSignRGB.cpp" open="1" top="0" tabpos="10">
+	<File name="src/eSignPort.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="0" topLine="4" />
+	</File>
+	<File name="src/eSignPort.h" open="1" top="0" tabpos="5">
+		<Cursor position="219" topLine="0" />
+	</File>
+	<File name="src/eSignRGB.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="191" topLine="0" />
 	</File>
-	<File name="src/eSignRGB.h" open="1" top="0" tabpos="9">
+	<File name="src/eSignRGB.h" open="0" top="0" tabpos="9">
 		<Cursor position="36" topLine="0" />
 	</File>
-	<File name="src/eSignRGBColumn.cpp" open="1" top="0" tabpos="8">
+	<File name="src/eSignRGBColumn.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="120" topLine="0" />
 	</File>
-	<File name="src/eSignRGBColumn.h" open="1" top="0" tabpos="7">
+	<File name="src/eSignRGBColumn.h" open="0" top="0" tabpos="7">
 		<Cursor position="609" topLine="0" />
 	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="11">
+	<File name="src/main.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="559" topLine="0" />
 	</File>
-	<File name="src/movieToeSign.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="4116" topLine="139" />
+	<File name="src/movieToeSign.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="4116" topLine="13" />
 	</File>
-	<File name="src/movieToeSign.h" open="1" top="0" tabpos="23">
-		<Cursor position="981" topLine="8" />
+	<File name="src/movieToeSign.h" open="1" top="0" tabpos="3">
+		<Cursor position="575" topLine="18" />
 	</File>
-	<File name="src/sceneManager.cpp" open="1" top="1" tabpos="22">
-		<Cursor position="361" topLine="3" />
+	<File name="src/sceneManager.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1306" topLine="44" />
 	</File>
-	<File name="src/sceneManager.h" open="1" top="0" tabpos="21">
-		<Cursor position="492" topLine="23" />
+	<File name="src/sceneManager.h" open="1" top="1" tabpos="1">
+		<Cursor position="899" topLine="33" />
 	</File>
-	<File name="src/testApp.cpp" open="1" top="0" tabpos="1">
+	<File name="src/testApp.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="3076" topLine="95" />
 	</File>
-	<File name="src/testApp.h" open="1" top="0" tabpos="2">
+	<File name="src/testApp.h" open="0" top="0" tabpos="2">
 		<Cursor position="1308" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

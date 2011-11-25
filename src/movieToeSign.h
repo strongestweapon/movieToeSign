@@ -23,6 +23,7 @@ class movieToeSign
 
 
         void addeSign(string UDPAddress, int numOfPorts);
+        void addColumn(int fixtureNumber, int portNumber, float x, float y, int LEDNumber, bool direction);
 
 
         int getNumOfeSigns();
