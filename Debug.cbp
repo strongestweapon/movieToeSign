@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Debug" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="addons/;src/;build config/;addons/ofxhGui/;addons/ofxhGui/src/;addons/ofxhUtils/;addons/ofxhUtils/src/;addons/ofxhUtils/src/hEvents/;addons/ofxhUtils/src/hStringUtils/;addons/ofxhUtils/src/hTable/;addons/ofxXmlSettings/;addons/ofxXmlSettings/src/;addons/ofxXmlSettings/libs/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/$(PROJECT_NAME)_debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/Debug/" />
+				<Option external_deps="../../../libs/openFrameworksCompiled/lib/linux64/libopenFrameworksDebug.a;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+			</Target>
+		</Build>
+		<Unit filename="../../../addons/ofxXmlSettings/libs/tinyxml.cpp">
+			<Option virtualFolder="addons/ofxXmlSettings/libs/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxXmlSettings/libs/tinyxml.h">
+			<Option virtualFolder="addons/ofxXmlSettings/libs/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp">
+			<Option virtualFolder="addons/ofxXmlSettings/libs/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp">
+			<Option virtualFolder="addons/ofxXmlSettings/libs/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp">
+			<Option virtualFolder="addons/ofxXmlSettings/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxXmlSettings/src/ofxXmlSettings.h">
+			<Option virtualFolder="addons/ofxXmlSettings/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/h2DSlider.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/h2DSlider.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hAlert.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hAlert.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hAlertLabel.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hAlertLabel.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hButton.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hButton.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hButtonBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hButtonBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hButtonBoxItem.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hButtonBoxItem.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hCheckBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hCheckBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hCounterLabel.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hCounterLabel.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hDialog.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hDialog.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hDialogButton.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hDialogButton.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hDrawingPrimitives.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hDrawingPrimitives.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hGui.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hGui.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hGui_all.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hIncButton.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hIncButton.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hLabel.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hLabel.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hListBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hListBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hListItem.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hListItem.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hMessageBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hMessageBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hNumberBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hNumberBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hPanel.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hPanel.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hScrollBar.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hScrollBar.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hScrollButton.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hScrollButton.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hSlider.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hSlider.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hSliderBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hSliderBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hStatusBar.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hStatusBar.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTScrollBar.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTScrollBar.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTabBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTabBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTabBoxItem.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTabBoxItem.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTextArea.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTextArea.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTextAreaButton.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTextAreaButton.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTextBox.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hTextBox.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hWidget.cpp">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhGui/src/hWidget.h">
+			<Option virtualFolder="addons/ofxhGui/src/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hEvents/hEvents.cpp">
+			<Option virtualFolder="addons/ofxhUtils/src/hEvents/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hEvents/hEvents.h">
+			<Option virtualFolder="addons/ofxhUtils/src/hEvents/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hEvents/hObject.h">
+			<Option virtualFolder="addons/ofxhUtils/src/hEvents/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hEvents/hSymbols.cpp">
+			<Option virtualFolder="addons/ofxhUtils/src/hEvents/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hEvents/hSymbols.h">
+			<Option virtualFolder="addons/ofxhUtils/src/hEvents/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hStringUtils/hStringUtils.cpp">
+			<Option virtualFolder="addons/ofxhUtils/src/hStringUtils/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hStringUtils/hStringUtils.h">
+			<Option virtualFolder="addons/ofxhUtils/src/hStringUtils/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hTable/hTable.cpp">
+			<Option virtualFolder="addons/ofxhUtils/src/hTable/" />
+		</Unit>
+		<Unit filename="../../../addons/ofxhUtils/src/hTable/hTable.h">
+			<Option virtualFolder="addons/ofxhUtils/src/hTable/" />
+		</Unit>
+		<Unit filename="config.make">
+			<Option virtualFolder="build config" />
+		</Unit>
+		<Unit filename="src/eSignFixture.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/eSignFixture.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/eSignRGB.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/eSignRGB.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/eSignRGBColumn.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/eSignRGBColumn.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/main.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/movieToeSign.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/movieToeSign.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/testApp.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/testApp.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Extensions>
+			<code_completion>
+				<search_path add="../../../addons/ofxXmlSettings/src" />
+				<search_path add="../../../addons/ofxXmlSettings/libs" />
+				<search_path add="../../../addons/ofxhGui/src" />
+				<search_path add="../../../addons/ofxhUtils/src/hEvents" />
+				<search_path add="../../../addons/ofxhUtils/src/hStringUtils" />
+				<search_path add="../../../addons/ofxhUtils/src/hTable" />
+			</code_completion>
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

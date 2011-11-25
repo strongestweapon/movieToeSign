@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="../../../addons/ofxXmlSettings/src/ofxXmlSettings.h" open="0" top="0" tabpos="5">
+		<Cursor position="55" topLine="0" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hGui.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="16846" topLine="423" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hGui.h" open="0" top="0" tabpos="4">
+		<Cursor position="9482" topLine="233" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hPanel.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="6861" topLine="241" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hTabBox.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="4210" topLine="150" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hTextArea.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="5414" topLine="8" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hWidget.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="5977" topLine="208" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hWidget.h" open="1" top="0" tabpos="3">
+		<Cursor position="2523" topLine="44" />
+	</File>
+	<File name="../../../addons/ofxhUtils/src/hEvents/hEvents.h" open="0" top="0" tabpos="3">
+		<Cursor position="796" topLine="81" />
+	</File>
+	<File name="../../../addons/ofxhUtils/src/hEvents/hObject.h" open="0" top="0" tabpos="5">
+		<Cursor position="1306" topLine="0" />
+	</File>
+	<File name="../../../addons/ofxhUtils/src/hTable/hTable.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1508" topLine="26" />
+	</File>
+	<File name="config.make" open="0" top="0" tabpos="4">
+		<Cursor position="298" topLine="0" />
+	</File>
+	<File name="src/eSignFixture.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="29" topLine="0" />
+	</File>
+	<File name="src/eSignFixture.h" open="1" top="0" tabpos="5">
+		<Cursor position="914" topLine="15" />
+	</File>
+	<File name="src/eSignRGB.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="191" topLine="0" />
+	</File>
+	<File name="src/eSignRGB.h" open="1" top="0" tabpos="9">
+		<Cursor position="36" topLine="0" />
+	</File>
+	<File name="src/eSignRGBColumn.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="120" topLine="0" />
+	</File>
+	<File name="src/eSignRGBColumn.h" open="1" top="0" tabpos="7">
+		<Cursor position="609" topLine="1" />
+	</File>
+	<File name="src/main.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="559" topLine="0" />
+	</File>
+	<File name="src/movieToeSign.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/movieToeSign.h" open="0" top="0" tabpos="9">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/testApp.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="3092" topLine="99" />
+	</File>
+	<File name="src/testApp.h" open="1" top="0" tabpos="2">
+		<Cursor position="1308" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

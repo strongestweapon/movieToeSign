@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1311249946 source:/home/fetmlinux/Documents/of_preRelease_v007_linux64/addons/ofxXmlSettings/libs/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1311249946 /home/fetmlinux/Documents/of_preRelease_v007_linux64/addons/ofxXmlSettings/libs/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1311249946 source:/home/fetmlinux/Documents/of_preRelease_v007_linux64/addons/ofxXmlSettings/libs/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1311249946 source:/home/fetmlinux/Documents/of_preRelease_v007_linux64/addons/ofxXmlSettings/libs/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
