@@ -120,6 +120,19 @@ void sceneManager::update(sceneType scene, sceneControlType sceneControl, effect
     }
 }
 
+void sceneManager::drawScene(float x, float y)
+{
+    int id = scene_map[currentScene];
+    movieRect.x =x;
+    movieRect.y=y;
+
+    ofPushMatrix();
+    ofTranslate(x,y,0);
+    scenes[id].draw();
+    ofPopMatrix();
+
+}
+
 unsigned char* sceneManager::getScenePixels()
 {
     int id = scene_map[currentScene];

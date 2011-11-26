@@ -41,6 +41,7 @@ void movieScene::play(bool loop)
 {
     if(loop)
     {
+        movie.setLoopState(OF_LOOP_NORMAL);
         movie.setPosition(0);
         movie.play();
     }
@@ -62,6 +63,14 @@ void movieScene::stop()
 {
     movie.stop();
 }
+
+void movieScene::draw()
+{
+    ofPushMatrix();
+    movie.draw(0,0);
+    ofPopMatrix();
+}
+
 
 bool movieScene::isMovieInScene()
 {

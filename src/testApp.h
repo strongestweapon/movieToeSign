@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "movieToeSign.h"
+#include "sceneManager.h"
 #include "hEvents.h"
 // The event system used by hGui
 // Can also be used to create new events and listeners
@@ -18,7 +19,6 @@ class testApp : public ofBaseApp, public hObject{
 
 		void setup();
 		void update();
-		void exit();
 		void draw();
 
 		void keyPressed(int key);
@@ -31,37 +31,19 @@ class testApp : public ofBaseApp, public hObject{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		ofVideoPlayer 		fingerMovie;
-		bool                frameByframe;
-
-		int movWidth;
-		int movHeight;
-
-        int gridRes;
-
-        //eSignFixture eSign1;
-
-
-        ofTrueTypeFont * font;
-        std::string myString;
-        void setText(std::string text);
-        void clearText(void);
-        void setLabel(std::string label);
-        void scene1(void);
-        void scene2(void);
-        void scene3(void);
-        void scene4(void);
 
         //map image
         ofImage mapImg;
-        ofImage tempImg;
 
 
         bool bEdit;
 
-        hTabBox *  mainTabBox;
-
         movieToeSign Maze;
+        sceneManager manager;
+        sceneType scene;
+        sceneControlType sceneControl;
+        effectType effect;
+        effectControlType effectControl;
 
 };
 

@@ -16,6 +16,8 @@ class movieScene
         void update();
         void stop();
 
+        void draw();
+
         bool isMovieInScene();
 
         ofRectangle getMovieRect();
