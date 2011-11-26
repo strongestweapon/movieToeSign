@@ -15,17 +15,33 @@ void testApp::setup(){
     manager.addEffect("movies/kinect.mov",KINECTINPUT);
     manager.addEffect("movies/sound.mov",SOUNDINPUT);
 
+    //initialize scene & effect
     scene = INTRO;
     sceneControl = SCENEPLAY;
     effect = NOEFFECT;
     effectControl = EFFECTOFF;
+
+
+    //initialize the maze
+
+    maze.setMovieRect(manager.getMovieSize());
+    maze.addeSign("192.168.0.100",8);
+    maze.addeSign("192.168.0.101",8);
+    maze.addeSign("192.168.0.102",8);
+    maze.addeSign("192.168.0.103",8);
+    maze.addeSign("192.168.0.104",8);
+    maze.addeSign("192.168.0.105",8);
+    maze.addeSign("192.168.0.106",8);
+    maze.addeSign("192.168.0.107",8);
+    maze.addeSign("192.168.0.108",8);
+
 }
 
 
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    maze.getEditMode();
     manager.update(scene,sceneControl,effect,effectControl);
 
 }

@@ -2,7 +2,7 @@
 
 eSignFixture::eSignFixture()
 {
-    UDPAddress="168.33.44.1";
+    UDPAddress="";
     fixtureColor = ofColor(0,0,0);
 
 }
@@ -22,12 +22,20 @@ void eSignFixture::setup(string address,int numOfPorts)
     }
 }
 
+void eSignFixture::addColumn(int portNumber, float x, float y, int LEDNumber, bool direction)
+{
+
+    eSignPorts[portNumber].addColumn(x,y,LEDNumber,direction);
+}
+
+
 void eSignFixture::addPort()
 {
     eSignPort port;
     eSignPorts.push_back(port);
 
 }
+
 
 void eSignFixture::setColor(ofColor c)
 {

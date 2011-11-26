@@ -57,7 +57,7 @@ class sceneManager
         void update(sceneType scene, sceneControlType sceneControl, effectType effect, effectControlType effectControl); //set current scene and control
 
         void drawScene(float x, float y);
-
+        //void drawEffect(float x, float y, effectType effect);
 
         unsigned char * getScenePixels();
         unsigned char * getEffectPixels();

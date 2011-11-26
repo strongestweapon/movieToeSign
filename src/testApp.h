@@ -38,7 +38,7 @@ class testApp : public ofBaseApp, public hObject{
 
         bool bEdit;
 
-        movieToeSign Maze;
+        movieToeSign maze;
         sceneManager manager;
         sceneType scene;
         sceneControlType sceneControl;

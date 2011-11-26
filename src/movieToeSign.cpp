@@ -15,7 +15,8 @@ void movieToeSign::mousePressed(ofMouseEventArgs& args)
 {
     mouseX = args.x;
     mouseY = args.y;
-
+    guiHandler();
+    cout << editMode <<endl;
 }
 
 void movieToeSign::mouseDragged(ofMouseEventArgs& args)
@@ -31,6 +32,11 @@ void movieToeSign::mouseMoved(ofMouseEventArgs& args)
 void movieToeSign::mouseReleased(ofMouseEventArgs& args)
 {
 
+}
+
+void movieToeSign::setMovieRect(ofRectangle rect)
+{
+    movieRect = rect;
 }
 
 void movieToeSign::guiHandler()
@@ -79,6 +85,10 @@ void movieToeSign::guiHandler()
     }
 }
 
+int movieToeSign::getEditMode()
+{
+    return editMode;
+}
 
 
 void movieToeSign::addeSign(string UDPAddress, int numOfPorts)
@@ -87,6 +97,11 @@ void movieToeSign::addeSign(string UDPAddress, int numOfPorts)
     eSign.setup(UDPAddress, numOfPorts);
     eSigns.push_back(eSign);
 
+}
+
+void movieToeSign::addColumn(int fixtureNumber, int portNumber, float x, float y, int LEDNumber, bool direction)
+{
+    eSigns[fixtureNumber].addColumn(portNumber,x,y,LEDNumber,direction);
 }
 
 int movieToeSign::getNumOfeSigns()
