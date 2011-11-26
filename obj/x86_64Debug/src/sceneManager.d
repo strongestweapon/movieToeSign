@@ -252,7 +252,7 @@ obj/x86_64Debug/./src/sceneManager.d: src/sceneManager.cpp \
  ../../../libs/openFrameworks/video/ofVideoPlayer.h \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
- ../../../libs/openFrameworks/3d/ofEasyCam.h
+ ../../../libs/openFrameworks/3d/ofEasyCam.h src/movieScene.h
 
 src/sceneManager.h:
 
@@ -811,3 +811,5 @@ src/sceneManager.h:
 ../../../libs/openFrameworks/3d/ofCamera.h:
 
 ../../../libs/openFrameworks/3d/ofEasyCam.h:
+
+src/movieScene.h:

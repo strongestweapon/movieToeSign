@@ -291,6 +291,12 @@
 		<Unit filename="src/main.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
+		<Unit filename="src/movieScene.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/movieScene.h">
+			<Option virtualFolder="src/" />
+		</Unit>
 		<Unit filename="src/movieToeSign.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>

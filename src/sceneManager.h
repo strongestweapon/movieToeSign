@@ -1,5 +1,6 @@
 #pragma once
 #include "ofMain.h"
+#include "movieScene.h"
 
 enum sceneType
 {
@@ -16,19 +17,27 @@ enum subSceneType
     ENDED
 };
 
-enum effectType
+enum sceneControlType
 {
-    NOEFFECT = 4,
-    KINECTINPUT= 5,
-    SOUNDINPUT= 6,
+    SCENEPLAY,
+    SCENESTOP,
+    SCENEONCE
 };
 
-typedef struct metaMov
+enum effectType
 {
-    public:
-        int movieID;
-        int type;
-} movieInfo;
+    NOEFFECT,
+    KINECTINPUT,
+    SOUNDINPUT
+};
+
+enum effectControlType
+{
+    EFFECTON,
+    EFFECTOFF
+};
+
+
 
 class sceneManager
 {
@@ -36,35 +45,42 @@ class sceneManager
         sceneManager();
         virtual ~sceneManager();
 
-        vector<ofVideoPlayer> movies;
-        vector<movieInfo> movieInfos;
+        map<sceneType, int> scene_map;
+        map<effectType, int> effect_map;
 
-        void loadMovieToScene(string moviePath, sceneType scene);
-        void loadMovieToEffect(string moviePath, effectType effect);
+        vector<movieScene> scenes;
+        vector<movieScene> effects;
 
-        void playScene(sceneType scene, bool loop);
-        void updateScene();
-        void stopScene();
+        void addScene(string moviePath, sceneType scene);
+        void addEffect(string moviePath, effectType effect);
 
-        void playEffect(sceneType scene, effectType effect);
-        void updateEffect(effectType effect);
-        void stopEffect(effectType effect);
+        void update(sceneType scene, sceneControlType sceneControl, effectType effect, effectControlType effectControl); //set current scene and control
 
-        unsigned char * getPixels();
+        unsigned char * getScenePixels();
+        unsigned char * getEffectPixels();
         ofRectangle getMovieSize();
         ofRectangle getEffectSize();
 
     private:
+        void playScene(sceneType scene, bool loop);
+        void updateScene(sceneType scene);
+        void stopScene(sceneType scene);
+
+        void playEffect(effectType effect, bool loop);
+        void updateEffect(effectType effect);
+        void stopEffect(effectType effect);
+
+        int subScene;
+        int subEffect;
+
         sceneType currentScene;
-        int currentMovie;
+        sceneControlType currentSceneControl;
+
         effectType currentEffect;
-        int currentEffect;
+        effectControlType currentEffectControl;
+
         ofRectangle movieRect;
         ofRectangle effectRect;
-
-        int getMovieID(int type);
-
-
 
 };
 

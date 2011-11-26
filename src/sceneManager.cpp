@@ -2,7 +2,8 @@
 
 sceneManager::sceneManager()
 {
-    //ctor
+    subScene = ENDED;
+    subEffect = ENDED;
 }
 
 sceneManager::~sceneManager()
@@ -10,68 +11,133 @@ sceneManager::~sceneManager()
     //dtor
 }
 
-void sceneManager::loadMovieToScene(string moviePath, sceneType scene)
+void sceneManager::addScene(string moviePath, sceneType scene)
 {
-    ofVideoPlayer movie;
-    movie.loadMovie(moviePath);
-    movieRect = ofRectangle(0,0,movie.width,movie.height);
-    movies.push_back(movie);
-
-    movieInfo info;
-    info.movieID = movies.size()-1;
-    info.type = scene;
-    movieInfos.push_back(info);
-
+    movieScene sceneMov;
+    sceneMov.addMovie(moviePath, scene);
+    movieRect = sceneMov.getMovieRect();
+    scene_map[scene] = scenes.size();
+    scenes.push_back(sceneMov);
 }
 
-void sceneManager::loadMovieToEffect(string moviePath, effectType effect)
+void sceneManager::addEffect(string moviePath, effectType effect)
 {
-    ofVideoPlayer movie;
-    movie.loadMovie(moviePath);
-    effectRect = ofRectangle(0,0,movie.width,movie.height);
-    movies.push_back(movie);
-
-    movieInfo info;
-    info.movieID = movies.size()-1;
-    info.type = effect;
-    movieInfos.push_back(info);
-}
-
-int sceneManager::getMovieID(int type)
-{
-    for(int i = 0; i < movies.size() ; i++)
-    {
-        if(movieInfos[i].type == type)
-        return i;
-    }
-
-    return -1;
-
+    movieScene effectMov;
+    effectMov.addMovie(moviePath, effect);
+    effectRect = effectMov.getMovieRect();
+    effect_map[effect] = effects.size();
+    effects.push_back(effectMov);
 }
 
 void sceneManager::playScene(sceneType scene, bool loop)
 {
+    int id = scene_map[scene];
+    scenes[id].play(loop);
+}
+
+void sceneManager::updateScene(sceneType scene)
+{
+    int id = scene_map[scene];
+    scenes[id].update();
+}
+
+
+void sceneManager::stopScene(sceneType scene)
+{
+    int id = scene_map[scene];
+    scenes[id].stop();
+}
+
+void sceneManager::playEffect(effectType effect, bool loop)
+{
+    int id = effect_map[effect];
+    effects[id].play(loop);
+}
+
+void sceneManager::updateEffect(effectType effect)
+{
+    int id = effect_map[effect];
+    effects[id].update();
+}
+
+void sceneManager::stopEffect(effectType effect)
+{
+    int id = effect_map[effect];
+    effects[id].stop();
+}
+
+void sceneManager::update(sceneType scene, sceneControlType sceneControl, effectType effect, effectControlType effectControl)
+{
+    //set current scene & control
     currentScene = scene;
-    currentMovie = getMovieID(scene);
-    if (currentMovie >= 0)
+    currentSceneControl = sceneControl;
+    //set current effect & control
+    currentEffect = effect;
+    currentEffectControl = effectControl;
+
+    //scence play manager
+    if(currentSceneControl == SCENEPLAY && subScene == ENDED)
     {
-        if(loop) movies[currentMovie].setLoopState(OF_LOOP_NORMAL);
-        else movies[currentMovie].setLoopState(OF_LOOP_NONE);
-        movies[currentMovie].play();
+        subScene = PLAYING;
+        playScene(currentScene, true);
+    }
+
+    if(currentSceneControl == SCENEONCE && subScene == ENDED)
+    {
+        subScene = PLAYING;
+        playScene(currentScene, false);
+    }
+
+    if(currentSceneControl == SCENESTOP && subScene == PLAYING)
+    {
+        subScene = ENDED;
+        stopScene(currentScene);
+    }
+
+    if(currentSceneControl == SCENEPLAY || currentSceneControl == SCENEONCE )
+    {
+        updateScene(currentScene);
+    }
+
+
+    //effect play manager
+    if(currentEffectControl == EFFECTON && subEffect == ENDED)
+    {
+        subEffect = PLAYING;
+        playEffect(currentEffect, true);
+    }
+
+
+    if(currentEffectControl == EFFECTOFF && subEffect == PLAYING)
+    {
+        subEffect = ENDED;
+        stopEffect(currentEffect);
+    }
+
+    if(currentEffectControl == EFFECTON)
+    {
+        updateEffect(currentEffect);
     }
 }
 
-void sceneManager::updateScene()
+unsigned char* sceneManager::getScenePixels()
 {
-    movies[currentMovie].idleMovie();
+    int id = scene_map[currentScene];
+    return scenes[id].movie.getPixels();
 }
 
-void sceneManager::stopScene()
+unsigned char* sceneManager::getEffectPixels()
 {
-    movies[currentMovie].stop();
-    movies[currentMovie].setPosition(0);
+    int id = effect_map[currentEffect];
+    return effects[id].movie.getPixels();
 }
 
-//	OF_LOOP_NONE=0x01,
-//	OF_LOOP_PALINDROME=0x02,
-//	OF_LOOP_NORMAL=0x03
+ofRectangle sceneManager::getMovieSize()
+{
+    return movieRect;
+}
+
+ofRectangle sceneManager::getEffectSize()
+{
+    return effectRect;
+}
