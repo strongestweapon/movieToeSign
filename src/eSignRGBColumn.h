@@ -20,10 +20,11 @@ class eSignRGBColumn
         ofColor getColorAtPosZ(float z);
         ofColor getColorForNet(int posN);
 
+        int RGBLedNumber;
+
     protected:
     private:
         float posX, posY;
-        int RGBLedNumber;
         bool direction;
         ofColor columnColor;
 

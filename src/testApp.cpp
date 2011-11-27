@@ -26,15 +26,15 @@ void testApp::setup(){
     //initialize the maze
 
     maze.setMovieRect(manager.getMovieSize());
-    maze.addeSign("192.168.0.100",8);
-    maze.addeSign("192.168.0.101",8);
-    maze.addeSign("192.168.0.102",8);
-    maze.addeSign("192.168.0.103",8);
-    maze.addeSign("192.168.0.104",8);
-    maze.addeSign("192.168.0.105",8);
-    maze.addeSign("192.168.0.106",8);
-    maze.addeSign("192.168.0.107",8);
-    maze.addeSign("192.168.0.108",8);
+    maze.addeSign("192.168.1.11",8);
+    maze.addeSign("192.168.1.12",8);
+    maze.addeSign("192.168.1.13",8);
+    maze.addeSign("192.168.1.14",8);
+    maze.addeSign("192.168.1.15",8);
+    maze.addeSign("192.168.1.16",8);
+    maze.addeSign("192.168.1.17",8);
+    maze.addeSign("192.168.1.18",8);
+    maze.addeSign("192.168.1.19",8);
 
 
 
@@ -65,8 +65,8 @@ void testApp::draw(){
     manager.drawScene(0,0);
     ofPopStyle();
 
+    maze.draw(0,0,DRAW2D);
 }
-
 //--------------------------------------------------------------
 void testApp::keyPressed  (int key){
     switch(key)

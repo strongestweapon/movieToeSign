@@ -158,6 +158,7 @@ void movieToeSign::setColumnColorFromPixels(unsigned char * pixels)
 
 void  movieToeSign::draw(float x, float y, drawMode)
 {
+
     for(int g = 0; g <eSigns.size(); g++)
     {
         for(int h = 0; h< eSigns[g].eSignPorts.size(); h++)
@@ -182,6 +183,11 @@ void  movieToeSign::draw(float x, float y, drawMode)
 
             }
         }
+    }
+    cout << "-----------" << std::endl;
+
+    for(int i=0; i<eSigns.size(); i++) {
+        eSigns[i].update();
     }
 
 }

@@ -1,3 +1,4 @@
+ofxNetwork
 ofxXmlSettings 
 ofxhGui 
 ofxhUtils

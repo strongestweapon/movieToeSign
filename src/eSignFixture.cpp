@@ -9,17 +9,19 @@ eSignFixture::eSignFixture()
 
 eSignFixture::~eSignFixture()
 {
-    //dtor
 }
 
 void eSignFixture::setup(string address,int numOfPorts)
 {
     UDPAddress = address;
+    e = new eSignUdp(UDPAddress,PORT, numOfPorts, CLUSTER_COUNT, DATA_SIZE);
+    e->setDumpPacket(true);
 
     for(int i = 0; i < numOfPorts ; i++)
     {
         addPort();
     }
+
 }
 
 void eSignFixture::addColumn(int portNumber, float x, float y, int LEDNumber, bool direction)
@@ -53,7 +55,29 @@ ofColor eSignFixture::getColor()
     return fixtureColor;
 }
 
+void eSignFixture::update()
+{
+    for(int i = 0; i< eSignPorts.size(); i++)
+    {
+        for (int j =0; j< eSignPorts[j].eSignRGBColumns.size(); j++)
+        {
+            eSignRGBColumn column = eSignPorts[j].eSignRGBColumns[j];
+            for (int k=0; k < column.RGBLedNumber ; k++)
+            {
+                e->setPixel(i*(CLUSTER_COUNT)+(j*column.RGBLedNumber)+k,
+                            column.getColor().r,
+                            column.getColor().g,
+                            column.getColor().b
+                            );
+//                cout << hex << column.getColor().r << std::endl;
+//                cout << hex << column.getColor().g << std::endl;
+//                cout << hex << column.getColor().b << std::endl;
+            }
+        }
+    }
 
+    e->sendto();
+}
 
 
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "eSignPort.h"
-
+#include "eSignUdp.h"
 
 class eSignFixture
 {
@@ -18,11 +18,10 @@ class eSignFixture
         void setColor(ofColor c);
         ofColor getColor();
 
-
-
+        void update();
 
     private:
-
+        eSignUdp* e;
         string UDPAddress;
 
 
