@@ -22,11 +22,11 @@ class eSignRGBColumn
 
         int RGBLedNumber;
         float posX, posY;
+        bool direction;
 
     protected:
     private:
 
-        bool direction;
         ofColor columnColor;
 
 
