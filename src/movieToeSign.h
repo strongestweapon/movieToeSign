@@ -1,7 +1,9 @@
 #pragma once
 #include "ofMain.h"
 #include "eSignFixture.h"
-
+#include "hEvents.h"
+#include "hObject.h"
+#include "hGui_all.h"
 
 enum drawMode
 {
@@ -9,8 +11,14 @@ enum drawMode
     DRAW3D
 };
 
+enum editModeType
+{
+    ADD,
+    EDIT,
+    DONE
+};
 
-class movieToeSign
+class movieToeSign: public hObject
 {
     public:
         movieToeSign();
@@ -28,7 +36,9 @@ class movieToeSign
 
 
         int getNumOfeSigns();
-        int getEditMode();
+        int getNumOfLED();
+        int getNumOfLEDinPort(int fixtureNumber, int portNumber);
+        editModeType getEditMode();
 
 
         void guiHandler();
@@ -39,7 +49,7 @@ class movieToeSign
 
         int columnRectSize;
 
-
+        void guiSetup();
 
     private:
         int movWidth;
@@ -50,9 +60,62 @@ class movieToeSign
         int xStart;
         int yStart;
         float mouseX, mouseY;
+        float saveX,saveY;
 
-        int editMode;
+        editModeType editMode;
+        bool mouseOnMovie;
+
         ofRectangle movieRect;
+        int movieLEDNumber;
+        int portLEDNumber;
+
+
+        //gui members
+
+        void exit();
+        void start(void);
+        void stop(void);
+        void clear(void);
+
+        void setValue(double val);
+        void setValueToItem(double val, int index);
+        void setXY(double x, double y);
+
+        void selectItem(int item);
+        void itemSetSelected(int item, bool flag);
+
+        void setLabel(std::string label);
+
+        void setText(std::string text);
+        void addText(std::string text);
+        void clearText(void);
+
+        void openItem(int index);
+        void answerDialog(int buttonID);
+
+        // Custom listener:
+        void setColors(hEventArgs& args);
+
+        // GUI color customization example:
+        void setDarkColors(void);
+        void setLedColor(int* red, int* green,int* blue);
+        // Variables used by the widgets (linked to them) :
+        bool drawFlag;
+
+        int red, green, blue;
+
+        float xPct, yPct;
+
+        int curTime;
+
+        // Other objects:
+        hGui * gui;
+        ofTrueTypeFont * font;
+        std::string myString;
+
+        hSlider*  slider1;
+        hSlider*  slider2;
+        hSlider*  slider3;
 
 };
 

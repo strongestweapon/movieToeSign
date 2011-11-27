@@ -38,12 +38,12 @@ void eSignPort::setColumnRectSize(int size)
     columnRectSize = size;
 }
 
-int eSignPort::getNumOfeSignRGB()
+int eSignPort::getNumOfLED()
 {
     portLEDNumber = 0;
     for(int i = 0; i < eSignRGBColumns.size(); i++)
     {
-        portLEDNumber = portLEDNumber + eSignRGBColumns[i].eSignRGBs.size();
+        portLEDNumber = portLEDNumber + eSignRGBColumns[i].getNumOfLED();
     }
     return portLEDNumber;
 }

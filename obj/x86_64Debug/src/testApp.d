@@ -254,7 +254,6 @@ obj/x86_64Debug/./src/testApp.d: src/testApp.cpp src/testApp.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
  ../../../libs/openFrameworks/3d/ofEasyCam.h src/movieToeSign.h \
  src/eSignFixture.h src/eSignPort.h src/eSignRGBColumn.h src/eSignRGB.h \
- src/sceneManager.h src/movieScene.h src/controlGui.h \
  ../../../addons/ofxhUtils/src/hEvents/hEvents.h \
  ../../../addons/ofxhUtils/src/hEvents/hSymbols.h \
  ../../../addons/ofxhUtils/src/hEvents/hObject.h \
@@ -281,7 +280,8 @@ obj/x86_64Debug/./src/testApp.d: src/testApp.cpp src/testApp.h \
  ../../../addons/ofxhGui/src/hSliderBox.h \
  ../../../addons/ofxhGui/src/hStatusBar.h \
  ../../../addons/ofxhGui/src/hTabBox.h \
- ../../../addons/ofxhGui/src/hTextArea.h
+ ../../../addons/ofxhGui/src/hTextArea.h src/sceneManager.h \
+ src/movieScene.h src/controlGui.h
 
 src/testApp.h:
 
@@ -851,12 +851,6 @@ src/eSignRGBColumn.h:
 
 src/eSignRGB.h:
 
-src/sceneManager.h:
-
-src/movieScene.h:
-
-src/controlGui.h:
-
 ../../../addons/ofxhUtils/src/hEvents/hEvents.h:
 
 ../../../addons/ofxhUtils/src/hEvents/hSymbols.h:
@@ -910,3 +904,9 @@ src/controlGui.h:
 ../../../addons/ofxhGui/src/hTabBox.h:
 
 ../../../addons/ofxhGui/src/hTextArea.h:
+
+src/sceneManager.h:
+
+src/movieScene.h:
+
+src/controlGui.h:

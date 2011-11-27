@@ -4,9 +4,6 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 
-    //gut setup
-    gui.setup();
-
 	ofBackground(0);
     mapImg.loadImage("map/map.png");
     bEdit = false;
@@ -25,8 +22,11 @@ void testApp::setup(){
     effect = NOEFFECT;
     effectControl = EFFECTOFF;
 
+    ofRectangle movieRect = manager.getMovieSize();
+
     //maze setup
-    maze.setMovieRect(manager.getMovieSize());
+    maze.guiSetup();
+    maze.setMovieRect(movieRect);
     maze.addeSign("192.168.0.100",8);
     maze.addeSign("192.168.0.101",8);
     maze.addeSign("192.168.0.102",8);
@@ -36,18 +36,14 @@ void testApp::setup(){
     maze.addeSign("192.168.0.106",8);
     maze.addeSign("192.168.0.107",8);
     maze.addeSign("192.168.0.108",8);
-    maze.setColumnRectSize(5);
+    maze.setColumnRectSize(10); //after we assign eSigns and Ports, we change the columnRect size recursively
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     //get add or edit mode
+
     maze.getEditMode();
-
-    //change gui tap
-
-    //get gui value
-
 
     manager.update(scene,sceneControl,effect,effectControl);
 
@@ -92,7 +88,6 @@ void testApp::keyPressed  (int key){
         scene = OUTRO;
         sceneControl = SCENEPLAY;
         break;
-
     }
 
 }

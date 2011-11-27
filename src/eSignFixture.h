@@ -17,13 +17,15 @@ class eSignFixture
         void addColumn(int portNumber, float x, float y, int LEDNumber, bool direction);
         void setColor(ofColor c);
         void setColumnRectSize(int size);
+
+        int getNumOfLED();
         ofColor getColor();
 
 
 
 
     private:
-
+        int fixtureLEDNumber;
         string UDPAddress;
 
 

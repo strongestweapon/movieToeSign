@@ -59,3 +59,8 @@ ofColor eSignRGBColumn::getColor()
 {
     return columnColor;
 }
+
+int eSignRGBColumn::getNumOfLED()
+{
+    return eSignRGBs.size();
+}

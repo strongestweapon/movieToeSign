@@ -17,7 +17,7 @@ class controlGui : public ofBaseApp, public hObject {
 	public:
 		void setup();
 		void update();
-		void exit();
+
 		void draw();
 
 		void keyPressed  (int key);
@@ -30,7 +30,7 @@ class controlGui : public ofBaseApp, public hObject {
 
         // Methods called by the event listeners:
         // (must have the same names, parameters and return value than the methods defined in "hObject.h")
-
+        void exit();
         void start(void);
         void stop(void);
         void clear(void);
@@ -72,7 +72,7 @@ private:
 	int curTime;
 
 // Other objects:
-
+    hGui * gui;
 	ofTrueTypeFont * font;
 	std::string myString;
 

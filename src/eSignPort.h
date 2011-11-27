@@ -11,7 +11,8 @@ class eSignPort
         void addColumn(float x, float y, int LEDNumber, bool direction);
         void setColor(ofColor c);
         void setColumnRectSize(int size);
-        int getNumOfeSignRGB();
+
+        int getNumOfLED();
 
         vector<eSignRGBColumn> eSignRGBColumns;
         int columnRectSize;

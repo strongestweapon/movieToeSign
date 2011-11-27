@@ -4,7 +4,7 @@
 void controlGui::setup() {
     ofPushStyle();
 
-    hGui * gui = hGui::getInstance();
+    gui = hGui::getInstance();
 		// Create and initialize the hGui engine
 
 // Singleton objects use a setup method instead of a constructor
@@ -958,7 +958,6 @@ void controlGui::draw()
 
 //--------------------------------------------------------------
 void controlGui::keyPressed(int key){
-    hGui * gui = hGui::getInstance();
 
     if (key==' ') gui->hide();
 }

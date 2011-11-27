@@ -60,7 +60,15 @@ ofColor eSignFixture::getColor()
     return fixtureColor;
 }
 
-
+int eSignFixture::getNumOfLED()
+{
+    fixtureLEDNumber = 0;
+    for(int i = 0; i < eSignPorts.size(); i++)
+    {
+        fixtureLEDNumber = fixtureLEDNumber + eSignPorts[i].getNumOfLED();
+    }
+    return fixtureLEDNumber;
+}
 
 
 

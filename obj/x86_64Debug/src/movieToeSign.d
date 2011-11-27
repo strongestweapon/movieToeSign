@@ -253,7 +253,34 @@ obj/x86_64Debug/./src/movieToeSign.d: src/movieToeSign.cpp \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
  ../../../libs/openFrameworks/3d/ofEasyCam.h src/eSignFixture.h \
- src/eSignPort.h src/eSignRGBColumn.h src/eSignRGB.h
+ src/eSignPort.h src/eSignRGBColumn.h src/eSignRGB.h \
+ ../../../addons/ofxhUtils/src/hEvents/hEvents.h \
+ ../../../addons/ofxhUtils/src/hEvents/hSymbols.h \
+ ../../../addons/ofxhUtils/src/hEvents/hObject.h \
+ ../../../addons/ofxhUtils/src/hEvents/hObject.h \
+ ../../../addons/ofxhGui/src/hGui_all.h \
+ ../../../addons/ofxhGui/src/hGui.h \
+ ../../../addons/ofxhGui/src/h2DSlider.h \
+ ../../../addons/ofxhGui/src/hWidget.h \
+ ../../../addons/ofxhGui/src/hDrawingPrimitives.h \
+ ../../../addons/ofxhGui/src/hAlert.h \
+ ../../../addons/ofxhGui/src/hDialog.h \
+ ../../../addons/ofxhGui/src/hPanel.h \
+ ../../../addons/ofxhGui/src/hButton.h \
+ ../../../addons/ofxhGui/src/hButtonBox.h \
+ ../../../addons/ofxhGui/src/hListBox.h \
+ ../../../addons/ofxhGui/src/hCheckBox.h \
+ ../../../addons/ofxhGui/src/hCounterLabel.h \
+ ../../../addons/ofxhGui/src/hLabel.h \
+ ../../../addons/ofxhGui/src/hMessageBox.h \
+ ../../../addons/ofxhGui/src/hNumberBox.h \
+ ../../../addons/ofxhGui/src/hTextBox.h \
+ ../../../addons/ofxhGui/src/hSlider.h \
+ ../../../addons/ofxhUtils/src/hTable/hTable.h \
+ ../../../addons/ofxhGui/src/hSliderBox.h \
+ ../../../addons/ofxhGui/src/hStatusBar.h \
+ ../../../addons/ofxhGui/src/hTabBox.h \
+ ../../../addons/ofxhGui/src/hTextArea.h
 
 src/movieToeSign.h:
 
@@ -820,3 +847,57 @@ src/eSignPort.h:
 src/eSignRGBColumn.h:
 
 src/eSignRGB.h:
+
+../../../addons/ofxhUtils/src/hEvents/hEvents.h:
+
+../../../addons/ofxhUtils/src/hEvents/hSymbols.h:
+
+../../../addons/ofxhUtils/src/hEvents/hObject.h:
+
+../../../addons/ofxhUtils/src/hEvents/hObject.h:
+
+../../../addons/ofxhGui/src/hGui_all.h:
+
+../../../addons/ofxhGui/src/hGui.h:
+
+../../../addons/ofxhGui/src/h2DSlider.h:
+
+../../../addons/ofxhGui/src/hWidget.h:
+
+../../../addons/ofxhGui/src/hDrawingPrimitives.h:
+
+../../../addons/ofxhGui/src/hAlert.h:
+
+../../../addons/ofxhGui/src/hDialog.h:
+
+../../../addons/ofxhGui/src/hPanel.h:
+
+../../../addons/ofxhGui/src/hButton.h:
+
+../../../addons/ofxhGui/src/hButtonBox.h:
+
+../../../addons/ofxhGui/src/hListBox.h:
+
+../../../addons/ofxhGui/src/hCheckBox.h:
+
+../../../addons/ofxhGui/src/hCounterLabel.h:
+
+../../../addons/ofxhGui/src/hLabel.h:
+
+../../../addons/ofxhGui/src/hMessageBox.h:
+
+../../../addons/ofxhGui/src/hNumberBox.h:
+
+../../../addons/ofxhGui/src/hTextBox.h:
+
+../../../addons/ofxhGui/src/hSlider.h:
+
+../../../addons/ofxhUtils/src/hTable/hTable.h:
+
+../../../addons/ofxhGui/src/hSliderBox.h:
+
+../../../addons/ofxhGui/src/hStatusBar.h:
+
+../../../addons/ofxhGui/src/hTabBox.h:
+
+../../../addons/ofxhGui/src/hTextArea.h:

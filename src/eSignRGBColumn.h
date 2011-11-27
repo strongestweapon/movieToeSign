@@ -15,6 +15,8 @@ class eSignRGBColumn
         void setup(float x, float y, int LEDNumber, bool direction, int rectSize);
         void setColor(ofColor c);
         ofColor getColor();
+        int getNumOfLED();
+
         int portNumber;
 
         ofColor getColorAtPosZ(float z);
