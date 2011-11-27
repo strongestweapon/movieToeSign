@@ -230,19 +230,26 @@ void  movieToeSign::draw(float x, float y, drawMode)
         }
     }
 
+    drawStatus(1100,0,fixtureNumber,portNumber);
+}
+
+void movieToeSign::drawStatus(float x, float y, int fixNum, int portNum)
+{
     ofPushMatrix();
+    ofTranslate(x,y);
     ofPushStyle();
     ofSetColor(255);
-    ofDrawBitmapString("LED number in esign 0 -> port 0 ",1100,50);
-    ofDrawBitmapString(ofToString(getNumOfLEDinPort(0,0)),1100,70);
-    ofDrawBitmapString("LED number in esign 0 -> port 1 ",1100,90);
-    ofDrawBitmapString(ofToString(getNumOfLEDinPort(0,1)),1100,110);
-    ofDrawBitmapString("Total Number of LEDs ",1100,130);
-    ofDrawBitmapString(ofToString(getNumOfLED()),1100,150);
+
+
+    ofDrawBitmapString("LED number in esign:"+ofToString(fixNum+1)+" -> port "+ofToString(portNum+1),0,50);
+    ofDrawBitmapString(ofToString(getNumOfLEDinPort(fixNum,portNum)),0,70);
+
+
+    ofDrawBitmapString("Total Number of LEDs ",0,90);
+    ofDrawBitmapString(ofToString(getNumOfLED()),0,110);
     ofPopStyle();
     ofPopMatrix();
 }
-
 
 
 //gui related

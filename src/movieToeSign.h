@@ -44,6 +44,7 @@ class movieToeSign: public hObject
         void guiHandler();
         void setColumnColorFromPixels(unsigned char * pixels);
         void draw(float x, float y, drawMode d);
+        void drawStatus(float x, float y, int fixNum, int portNum);
 
         vector<eSignFixture> eSigns;
 
