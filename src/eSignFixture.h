@@ -11,7 +11,7 @@ class eSignFixture
 
         vector<eSignPort> eSignPorts;
         ofColor fixtureColor;
-
+        map<int, ofColor> rainbow;
         void setup(string address, int numOfPorts);
         void addPort();
         void addColumn(int portNumber, float x, float y, int LEDNumber, bool direction);

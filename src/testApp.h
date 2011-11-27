@@ -28,8 +28,6 @@ class testApp : public ofBaseApp, public hObject{
 
         bool bEdit;
 
-        //controlGui gui;
-
         movieToeSign maze;
         sceneManager manager;
         sceneType scene;
