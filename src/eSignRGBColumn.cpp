@@ -4,6 +4,7 @@ eSignRGBColumn::eSignRGBColumn()
 {
     columnColor = ofColor(0,0,0);
     portNumber =0;
+    columnRect = ofRectangle(0,0,20,20);
 }
 
 eSignRGBColumn::~eSignRGBColumn()
@@ -11,7 +12,7 @@ eSignRGBColumn::~eSignRGBColumn()
     //dtor
 }
 
-void eSignRGBColumn::setup(float x, float y, int LEDNumber, bool direction, float rectSize)
+void eSignRGBColumn::setup(float x, float y, int LEDNumber, bool direction, int rectSize)
 {
     //1. save column x,y postion
     //2. instantiate LEDNumber of eSignRGB objects
@@ -49,4 +50,9 @@ void eSignRGBColumn::setColor(ofColor c)
 ofColor eSignRGBColumn::getColor()
 {
     return columnColor;
+}
+
+int eSignRGBColumn::getNumOfLED()
+{
+    return eSignRGBs.size();
 }

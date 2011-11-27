@@ -4,6 +4,7 @@ eSignPort::eSignPort()
 {
     portLEDNumber = 0;
     columnRectSize = 20;
+    borderColor = ofColor(0,0,0);
 }
 
 eSignPort::~eSignPort()
@@ -32,12 +33,17 @@ void eSignPort::setColor(ofColor c)
     }
 }
 
-int eSignPort::getNumOfeSignRGB()
+void eSignPort::setColumnRectSize(int size)
+{
+    columnRectSize = size;
+}
+
+int eSignPort::getNumOfLED()
 {
     portLEDNumber = 0;
     for(int i = 0; i < eSignRGBColumns.size(); i++)
     {
-        portLEDNumber = portLEDNumber + eSignRGBColumns[i].eSignRGBs.size();
+        portLEDNumber = portLEDNumber + eSignRGBColumns[i].getNumOfLED();
     }
     return portLEDNumber;
 }

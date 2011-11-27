@@ -27,10 +27,9 @@ class testApp : public ofBaseApp, public hObject{
         //map image
         ofImage mapImg;
 
-
         bool bEdit;
 
-        controlGui gui;
+        //controlGui gui;
 
         movieToeSign maze;
         sceneManager manager;
@@ -38,6 +37,7 @@ class testApp : public ofBaseApp, public hObject{
         sceneControlType sceneControl;
         effectType effect;
         effectControlType effectControl;
+
 
 
 };

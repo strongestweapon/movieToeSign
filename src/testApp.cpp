@@ -3,18 +3,18 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    gui.setup();
 
 	ofBackground(0);
     mapImg.loadImage("map/map.png");
     bEdit = false;
 
+    //scene manager setup
     manager.addScene("movies/red.mov",INTRO);
     manager.addScene("movies/blue.mov",MOVIEA);
     manager.addScene("movies/yellow.mov",MOVIEB);
     manager.addScene("movies/green.mov",OUTRO);
-    manager.addEffect("movies/kinect.mov",KINECTINPUT);
-    manager.addEffect("movies/sound.mov",SOUNDINPUT);
+//    manager.addEffect("movies/kinect.mov",KINECTINPUT);
+//    manager.addEffect("movies/sound.mov",SOUNDINPUT);
 
     //initialize scene & effect
     scene = INTRO;
@@ -22,6 +22,7 @@ void testApp::setup(){
     effect = NOEFFECT;
     effectControl = EFFECTOFF;
 
+    ofRectangle movieRect = manager.getMovieSize();
 
     //initialize the maze
 
@@ -36,16 +37,15 @@ void testApp::setup(){
     maze.addeSign("192.168.1.18",8);
     maze.addeSign("192.168.1.19",8);
 
-
-
-
+    maze.setColumnRectSize(10); //after we assign eSigns and Ports, we change the columnRect size recursively
 }
-
-
 
 //--------------------------------------------------------------
 void testApp::update(){
+    //get add or edit mode
+
     maze.getEditMode();
+
     manager.update(scene,sceneControl,effect,effectControl);
 
 }
@@ -53,19 +53,17 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 
-    if(bEdit){
-        ofPushStyle();
-        ofSetColor(255);
-        mapImg.draw(20,20);
-        ofPopStyle();
-    }
-
     ofPushStyle();
     ofSetColor(255);
     manager.drawScene(0,0);
     ofPopStyle();
 
+    unsigned char * pixels = manager.getScenePixels();
+    maze.setColumnColorFromPixels(pixels);
+
+    ofPushMatrix();
     maze.draw(0,0,DRAW2D);
+    ofPopMatrix();
 }
 //--------------------------------------------------------------
 void testApp::keyPressed  (int key){
@@ -90,7 +88,6 @@ void testApp::keyPressed  (int key){
         scene = OUTRO;
         sceneControl = SCENEPLAY;
         break;
-
     }
 
 }

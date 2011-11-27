@@ -38,7 +38,6 @@ enum effectControlType
 };
 
 
-
 class sceneManager
 {
     public:
