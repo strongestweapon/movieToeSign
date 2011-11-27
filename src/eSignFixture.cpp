@@ -15,7 +15,7 @@ void eSignFixture::setup(string address,int numOfPorts)
 {
     UDPAddress = address;
     e = new eSignUdp(UDPAddress,PORT, numOfPorts, CLUSTER_COUNT, DATA_SIZE);
-    e->setDumpPacket(true);
+    e->setDumpPacket(false);
 
     for(int i = 0; i < numOfPorts ; i++)
     {
@@ -59,19 +59,25 @@ void eSignFixture::update()
 {
     for(int i = 0; i< eSignPorts.size(); i++)
     {
-        for (int j =0; j< eSignPorts[j].eSignRGBColumns.size(); j++)
+        for (int j =0; j< eSignPorts[i].eSignRGBColumns.size(); j++)
         {
-            eSignRGBColumn column = eSignPorts[j].eSignRGBColumns[j];
-            for (int k=0; k < column.RGBLedNumber ; k++)
+            eSignRGBColumn column = eSignPorts[i].eSignRGBColumns[j];
+           for (int k=0; k < column.RGBLedNumber ; k++)
             {
-                e->setPixel(i*(CLUSTER_COUNT)+(j*column.RGBLedNumber)+k,
+                //e->setPixels(255,0,255);
+                cout << "CLUSTER: ";
+                cout << CLUSTER_COUNT << std::endl;
+                cout << "RGBLedNumber: ";
+                cout << column.RGBLedNumber << std::endl;
+
+                e->setPixel(i*(CLUSTER_COUNT)+(j*8)+k,
                             column.getColor().r,
                             column.getColor().g,
                             column.getColor().b
                             );
-//                cout << hex << column.getColor().r << std::endl;
-//                cout << hex << column.getColor().g << std::endl;
-//                cout << hex << column.getColor().b << std::endl;
+                cout << hex << column.getColor().r << std::endl;
+                cout << hex << column.getColor().g << std::endl;
+                cout << hex << column.getColor().b << std::endl;
             }
         }
     }

@@ -95,6 +95,7 @@ void movieToeSign::addeSign(string UDPAddress, int numOfPorts)
 {
     eSignFixture eSign;
     eSign.setup(UDPAddress, numOfPorts);
+    eSign.addColumn(0,10,10,8,true);
     eSign.addColumn(1,10,10,8,true);
     eSign.addColumn(2,10,10,8,true);
     eSign.addColumn(3,10,10,8,true);
@@ -191,13 +192,16 @@ void  movieToeSign::draw(float x, float y, drawMode)
             }
         }
     }
-    cout << "-----------" << std::endl;
 
-    for(int i=0; i<8; i++) {
-        eSigns[0].eSignPorts[i].setColor(ofColor(255,0,0));
+    for (int i=0; i <8; i++) {
+        ofColor col ;
+        col.r = 30*i;
+        col.g = 255;
+        col.b = 255;
+        eSigns[0].eSignPorts[i].setColor(col);
     }
 
-     //// eSignUdp packets send
+//     //// eSignUdp packets send
     for(int i=0; i<eSigns.size(); i++) {
         eSigns[i].update();
     }
