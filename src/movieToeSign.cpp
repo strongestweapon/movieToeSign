@@ -216,16 +216,17 @@ void  movieToeSign::draw(float x, float y, drawMode)
         ofPopMatrix();
     }
 
+    ofPushMatrix();
+    ofPushStyle();
+ 
     //draw saved column
-
     for(int g = 0; g <eSigns.size(); g++)
     {
         for(int h = 0; h< eSigns[g].eSignPorts.size(); h++)
         {
             for (int i =0; i < eSigns[g].eSignPorts[h].eSignRGBColumns.size(); i++)
             {
-                ofPushMatrix();
-                ofPushStyle();
+
                 ofFill();
                 ofSetColor(eSigns[g].eSignPorts[h].eSignRGBColumns[i].getColor());
                 //ofSetRectMode(OF_RECTMODE_CENTER);
@@ -233,16 +234,27 @@ void  movieToeSign::draw(float x, float y, drawMode)
                 ofNoFill();
                 //TO DO: set color by ports
                 ofSetColor(eSigns[g].eSignPorts[h].borderColor);
+                ofSetLineWidth(1);
                 ofRect(eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect);
                 ofDrawBitmapString(ofToString(i),eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.x,eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.y-5);
-                ofPopStyle();
-                ofPopMatrix();
+            }
 
+            ofBeginShape();
+            for (int i =0; i < eSigns[g].eSignPorts[h].eSignRGBColumns.size(); i++)
+            {
 
+                //ofSetColor(eSigns[g].eSignPorts[h].borderColor);
+                ofSetLineWidth(1);
+                ofVertex(eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.x,eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.y);
 
             }
+            ofEndShape();
+
         }
     }
+
+    ofPopStyle();
+    ofPopMatrix();
 
     drawStatus(1100,0,fixtureNumber,portNumber);
 

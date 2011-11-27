@@ -64,7 +64,7 @@
 	<File name="config.make" open="0" top="0" tabpos="4">
 		<Cursor position="298" topLine="0" />
 	</File>
-	<File name="src/eSignFixture.cpp" open="1" top="1" tabpos="25">
+	<File name="src/eSignFixture.cpp" open="1" top="0" tabpos="25">
 		<Cursor position="911" topLine="24" />
 	</File>
 	<File name="src/eSignFixture.h" open="1" top="0" tabpos="24">
@@ -97,8 +97,8 @@
 	<File name="src/movieScene.h" open="1" top="0" tabpos="5">
 		<Cursor position="236" topLine="0" />
 	</File>
-	<File name="src/movieToeSign.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="192" topLine="0" />
+	<File name="src/movieToeSign.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="5861" topLine="218" />
 	</File>
 	<File name="src/movieToeSign.h" open="1" top="0" tabpos="2">
 		<Cursor position="1157" topLine="39" />
