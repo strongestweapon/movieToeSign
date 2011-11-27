@@ -3,7 +3,6 @@
 #include "ofMain.h"
 #include "movieToeSign.h"
 #include "sceneManager.h"
-#include "controlGui.h"
 
 class testApp : public ofBaseApp, public hObject{
 
