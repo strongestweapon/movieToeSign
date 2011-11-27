@@ -5,7 +5,7 @@
     </button_box>
     <button_box>
         <name>portButtonBox</name>
-        <selection>8</selection>
+        <selection>6</selection>
     </button_box>
     <button_box>
         <name>ledButtonBox</name>
@@ -13,10 +13,10 @@
     </button_box>
     <check_box>
         <name>upCheckBox</name>
-        <selected>false</selected>
+        <selected>true</selected>
     </check_box>
     <check_box>
         <name>bottomCheckBox</name>
-        <selected>true</selected>
+        <selected>false</selected>
     </check_box>
 </gui_settings>
