@@ -9,3 +9,7 @@
 *.o
 *.so
 obj
+*~
+
+bin/movieToeSign_debug
+bin/movieToeSign
