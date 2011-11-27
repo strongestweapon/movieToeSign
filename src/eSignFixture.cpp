@@ -74,30 +74,72 @@ ofColor eSignFixture::getColor()
 
 void eSignFixture::update()
 {
-    for(int i = 0; i< eSignPorts.size(); i++)
+    for(int h = 0; h< eSignPorts.size(); h++)
     {
-        for (int j =0; j< eSignPorts[i].eSignRGBColumns.size(); j++)
+        for (int i =0; i < eSignPorts[h].eSignRGBColumns.size(); i++)
         {
-            eSignRGBColumn column = eSignPorts[i].eSignRGBColumns[j];
-           for (int k=0; k < column.RGBLedNumber ; k++)
-            {
-                //e->setPixels(255,0,255);
-                cout << "CLUSTER: ";
-                cout << CLUSTER_COUNT << std::endl;
-                cout << "RGBLedNumber: ";
-                cout << column.RGBLedNumber << std::endl;
 
-                e->setPixel(i*(CLUSTER_COUNT)+(j*8)+k,
-                            column.getColor().r,
-                            column.getColor().g,
-                            column.getColor().b
-                            );
-                cout << hex << column.getColor().r << std::endl;
-                cout << hex << column.getColor().g << std::endl;
-                cout << hex << column.getColor().b << std::endl;
-            }
+       for (int k=0; k < eSignPorts[h].eSignRGBColumns[i].getNumOfLED() ; k++)
+        {
+            //////////////
+            ofPushMatrix();
+            ofPushStyle();
+            ofSetColor(eSignPorts[h].eSignRGBColumns[i].getColor());
+            ofRect(1024,400,100,100);
+            ofPopStyle();
+            ofPopMatrix();
+
+            e->setPixel(h*(CLUSTER_COUNT)+(i*8)+k,
+                eSignPorts[h].eSignRGBColumns[i].getColor().r,
+                eSignPorts[h].eSignRGBColumns[i].getColor().g,
+                eSignPorts[h].eSignRGBColumns[i].getColor().b
+                );
         }
+      }
     }
+
+
+// 
+//     for(int i = 0; i< eSignPorts.size(); i++)
+//     {
+//         cout << "1";
+//         for (int j =0; j< eSignPorts[i].eSignRGBColumns.size(); j++)
+//         {
+//           // eSignRGBColumn column = eSignPorts[i].eSignRGBColumns[j];
+//           cout << "2";
+//            for (int k=0; k < column.getNumOfLED() ; k++)
+//             {
+//                 cout << "CLUSTER: ";
+//                 cout << CLUSTER_COUNT << std::endl;
+//                 cout << "RGBLedNumber: ";
+//                 cout << column.RGBLedNumber << std::endl;
+//                 int channel = i*(CLUSTER_COUNT)+(j*8)+k;
+//                 cout << "CHANNEL: ";
+//                 cout << channel << std::endl;
+//                 cout << "COLOR R: ";
+//                 cout << hex << (uint8_t)column.getColor().r << std::endl;
+//                 cout << "COLOR G: ";
+//                 cout << hex << (uint8_t)column.getColor().g << std::endl;
+//                 cout << "COLOR B: ";
+//                 cout << hex << (uint8_t)column.getColor().b << std::endl;
+// 
+//                 // ofPushMatrix();
+//                 // ofPushStyle();
+//                 // ofSetColor(column.getColor());
+//                 // ofRect(1024,400,100,100);
+//                 // ofPopStyle();
+//                 // ofPopMatrix();
+// 
+//                 uint8_t red = column.getColor().r;
+//                 cout << "COLOR uint8_t R: ";
+//                 cout << hex << red << std::endl;
+//                 uint8_t green = 255;
+//                 uint8_t blue = 255;
+// 
+//                 e->setPixel(i*(CLUSTER_COUNT)+(j*8)+k,column.getColor().r,column.getColor().g,column.getColor().b);
+//             }
+//         }
+//     }
 
     e->sendto();
 }
@@ -111,61 +153,3 @@ int eSignFixture::getNumOfLED()
     }
     return fixtureLEDNumber;
 }
-
-
-
-//void eSignFixture::addColumn(int LEDNumber, bool direction)
-//{
-//
-//    //2. instantiate a column
-//    //3. setup column based on inputs from gui and formerly added number of columns
-//    //4. push column object to eSignFixture
-//    eSignRGBColumn column;
-//    column.setup(posX, posY, LEDNumber, direction,columnRectSize);
-//    eSignRGBColumns.push_back(column);
-//    //bAddColumn = false;
-//
-//}
-
-//int eSignFixture::getEditMode()
-//{
-//    return editMode;
-//}
-
-
-//void eSignFixture::draw()
-//{
-//
-//         for (int i =0; i < eSignRGBColumns.size(); i++)
-//        {
-//        ofPushMatrix();
-//        ofPushStyle();
-//        ofFill();
-//        ofSetColor(eSignRGBColumns[i].getColor());
-//        //ofSetRectMode(OF_RECTMODE_CENTER);
-//        ofRect(eSignRGBColumns[i].columnRect);
-//        ofNoFill();
-//        ofSetColor(fixtureColor);
-//        ofRect(eSignRGBColumns[i].columnRect);
-//        ofDrawBitmapString(ofToString(i),eSignRGBColumns[i].columnRect.x,eSignRGBColumns[i].columnRect.y-5);
-//        ofPopStyle();
-//        ofPopMatrix();
-//        }
-//
-//        ofPushMatrix();
-//        ofPushStyle();
-//        ofSetColor(fixtureColor);
-//
-//        ofBeginShape();
-//         for (int i =0; i < eSignRGBColumns.size(); i++)
-//        {
-//
-//
-//        ofVertex(eSignRGBColumns[i].columnRect.x,eSignRGBColumns[i].columnRect.y);
-//
-//        }
-//        ofEndShape();
-//        ofPopStyle();
-//        ofPopMatrix();
-//
-// }

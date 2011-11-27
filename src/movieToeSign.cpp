@@ -28,6 +28,13 @@ void movieToeSign::mousePressed(ofMouseEventArgs& args)
         mouseOnMovie = false;
 
     }
+    cout << "movieRect:" <<' ';
+    cout << movieRect.width <<'\t';
+    cout << movieRect.height << endl;
+
+    cout << "columnRectSize:" <<' ';
+    cout << columnRectSize << endl;
+
     cout << "mouse:" <<' ';
     cout << mouseX <<'\t';
     cout << mouseY <<endl;
@@ -119,14 +126,6 @@ void movieToeSign::addeSign(string UDPAddress, int numOfPorts)
 {
     eSignFixture eSign;
     eSign.setup(UDPAddress, numOfPorts);
-    eSign.addColumn(0,10,10,8,true);
-    eSign.addColumn(1,10,10,8,true);
-    eSign.addColumn(2,10,10,8,true);
-    eSign.addColumn(3,10,10,8,true);
-    eSign.addColumn(4,10,10,8,true);
-    eSign.addColumn(5,10,10,8,true);
-    eSign.addColumn(6,10,10,8,true);
-    eSign.addColumn(7,10,10,8,true);
 
     ////////////////////////////////
     eSigns.push_back(eSign);
@@ -238,11 +237,19 @@ void  movieToeSign::draw(float x, float y, drawMode)
                 ofDrawBitmapString(ofToString(i),eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.x,eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.y-5);
                 ofPopStyle();
                 ofPopMatrix();
+
+
+
             }
         }
     }
 
     drawStatus(1100,0,fixtureNumber,portNumber);
+
+    //// eSignUdp packets send
+    for(int i=0; i<eSigns.size(); i++) {
+        eSigns[i].update();
+    }
 }
 
 void movieToeSign::drawStatus(float x, float y, int fixNum, int portNum)
@@ -399,20 +406,6 @@ void movieToeSign::start(void){
             editMode = DONE;
         }
     }
-
-    for (int i=0; i <8; i++) {
-        ofColor col ;
-        col.r = 30*i;
-        col.g = 255;
-        col.b = 255;
-        eSigns[0].eSignPorts[i].setColor(col);
-    }
-
-//     //// eSignUdp packets send
-    for(int i=0; i<eSigns.size(); i++) {
-        eSigns[i].update();
-    }
-
 }
 
 void movieToeSign::stop(void){

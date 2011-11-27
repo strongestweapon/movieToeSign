@@ -22,7 +22,9 @@ void testApp::setup(){
     effect = NOEFFECT;
     effectControl = EFFECTOFF;
 
-    ofRectangle movieRect = manager.getMovieSize();
+    ofRectangle movieRect = ofRectangle(0, 0, 1024, 768);
+    cout << "movie rect width: ";
+    cout << movieRect.width << std::endl;
 
     //initialize the maze
 
