@@ -22,7 +22,7 @@ class movieToeSign
         void mouseReleased(ofMouseEventArgs& args);
 
         void setMovieRect(ofRectangle rect);
-
+        void setColumnRectSize(int size);
         void addeSign(string UDPAddress, int numOfPorts);
         void addColumn(int fixtureNumber, int portNumber, float x, float y, int LEDNumber, bool direction);
 
@@ -46,7 +46,7 @@ class movieToeSign
         int movHeight;
 
         int meanCnt;
-        int meanR; int meanG;int meanB;
+        float meanR; float meanG;float meanB;
         int xStart;
         int yStart;
         float mouseX, mouseY;

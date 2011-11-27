@@ -903,6 +903,10 @@ void controlGui::update()
 
 void controlGui::draw()
 {
+//    ofPushStyle();
+//    ofSetColor(255,255,0);
+//    ofRect(800,0,300,300);
+//    ofPopStyle();
 //// the following variables are controlled by widgets:
 //// backColor, drawFlag, xPct, yPct, myString
 //

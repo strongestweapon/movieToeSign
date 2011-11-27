@@ -127,7 +127,7 @@ void sceneManager::drawScene(float x, float y)
     movieRect.y= y;
 
     ofPushMatrix();
-    ofTranslate(x,y,0);
+    ofTranslate(x,y);
     scenes[id].draw();
     ofPopMatrix();
 

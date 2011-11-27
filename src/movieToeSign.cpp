@@ -4,6 +4,7 @@ movieToeSign::movieToeSign()
 {
     ofRegisterMouseEvents(this);
     editMode = 0;
+    columnRectSize = 20;
 }
 
 movieToeSign::~movieToeSign()
@@ -16,7 +17,25 @@ void movieToeSign::mousePressed(ofMouseEventArgs& args)
     mouseX = args.x;
     mouseY = args.y;
     guiHandler();
+    cout << "mouse:" <<' ';
+    cout << mouseX <<'\t';
+    cout << mouseY <<endl;
     cout << editMode <<endl;
+    switch(editMode)
+    {
+        case -1:
+        cout << "out of range" << std::endl;
+        break;
+        case 0:
+        cout << "edit" << std::endl;
+        break;
+        case 1:
+        addColumn(0, 0, mouseX, mouseY, 8,true);
+        break;
+        case 2:
+        addColumn(0, 0, mouseX, mouseY, 8,true);
+        break;
+    }
 }
 
 void movieToeSign::mouseDragged(ofMouseEventArgs& args)
@@ -37,8 +56,19 @@ void movieToeSign::mouseReleased(ofMouseEventArgs& args)
 void movieToeSign::setMovieRect(ofRectangle rect)
 {
     movieRect = rect;
+    movWidth = movieRect.width;
+    movHeight = movieRect.height;
 }
 
+void movieToeSign::setColumnRectSize(int size)
+{
+    columnRectSize = size;
+    for(int i = 0; i <eSigns.size(); i++)
+    {
+        eSigns[i].setColumnRectSize(columnRectSize);
+    }
+
+}
 void movieToeSign::guiHandler()
 {
     //1. create open gui
@@ -57,7 +87,7 @@ void movieToeSign::guiHandler()
                         if( eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.inside(mouseX,mouseY))
                         {
                             //x,y is inside the columnRect -> edit
-                            cout << "edit" << std::endl;
+
                             //continue;
                             editMode = 0;
                             return;
@@ -79,7 +109,7 @@ void movieToeSign::guiHandler()
         }
     }
     else{
-        cout << "out of range" << std::endl;
+
         editMode= -1;
         return;
     }
@@ -109,17 +139,11 @@ int movieToeSign::getNumOfeSigns()
     return eSigns.size();
 }
 
-
-
 void movieToeSign::setColumnColorFromPixels(unsigned char * pixels)
 {
     //get color from tiled image and set colors for the columns
     //if a column is not yet added for a coordinates from image, ignore
     //loop added columns to set column colors based on saved column position
-
-
-
-
 
     for(int g = 0; g <eSigns.size(); g++)
     {
@@ -146,9 +170,9 @@ void movieToeSign::setColumnColorFromPixels(unsigned char * pixels)
                     }
                 }
 
-                meanR/=meanCnt;
-                meanG/=meanCnt;
-                meanB/=meanCnt;
+                meanR/=(float)meanCnt;
+                meanG/=(float)meanCnt;
+                meanB/=(float)meanCnt;
 
                 eSigns[g].eSignPorts[h].eSignRGBColumns[i].setColor(ofColor((unsigned char)meanR,(unsigned char)meanG,(unsigned char)meanB));
             }
@@ -158,13 +182,13 @@ void movieToeSign::setColumnColorFromPixels(unsigned char * pixels)
 
 void  movieToeSign::draw(float x, float y, drawMode)
 {
+
     for(int g = 0; g <eSigns.size(); g++)
     {
         for(int h = 0; h< eSigns[g].eSignPorts.size(); h++)
         {
             for (int i =0; i < eSigns[g].eSignPorts[h].eSignRGBColumns.size(); i++)
             {
-
                 ofPushMatrix();
                 ofPushStyle();
                 ofFill();
@@ -173,16 +197,13 @@ void  movieToeSign::draw(float x, float y, drawMode)
                 ofRect(eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect);
                 ofNoFill();
                 //TO DO: set color by ports
-                //ofSetColor(eSigns[g].eSignPorts[h].fixtureColor);
+                ofSetColor(eSigns[g].eSignPorts[h].borderColor);
                 ofRect(eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect);
                 ofDrawBitmapString(ofToString(i),eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.x,eSigns[g].eSignPorts[h].eSignRGBColumns[i].columnRect.y-5);
                 ofPopStyle();
                 ofPopMatrix();
-
-
             }
         }
     }
-
 }
 

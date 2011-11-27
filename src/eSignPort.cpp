@@ -4,6 +4,7 @@ eSignPort::eSignPort()
 {
     portLEDNumber = 0;
     columnRectSize = 20;
+    borderColor = ofColor(0,0,0);
 }
 
 eSignPort::~eSignPort()
@@ -30,6 +31,11 @@ void eSignPort::setColor(ofColor c)
     {
         eSignRGBColumns[i].setColor(c);
     }
+}
+
+void eSignPort::setColumnRectSize(int size)
+{
+    columnRectSize = size;
 }
 
 int eSignPort::getNumOfeSignRGB()

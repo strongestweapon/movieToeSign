@@ -28,35 +28,35 @@ class controlGui : public ofBaseApp, public hObject {
 		void mouseReleased(int x, int y, int button);
 		void windowResized(int w, int h);
 
-	// Methods called by the event listeners:
-// (must have the same names, parameters and return value than the methods defined in "hObject.h")
+        // Methods called by the event listeners:
+        // (must have the same names, parameters and return value than the methods defined in "hObject.h")
 
-	void start(void);
-	void stop(void);
-	void clear(void);
+        void start(void);
+        void stop(void);
+        void clear(void);
 
-	void setValue(double val);
-	void setValueToItem(double val, int index);
-	void setXY(double x, double y);
+        void setValue(double val);
+        void setValueToItem(double val, int index);
+        void setXY(double x, double y);
 
-	void selectItem(int item);
-    void itemSetSelected(int item, bool flag);
+        void selectItem(int item);
+        void itemSetSelected(int item, bool flag);
 
-	void setLabel(std::string label);
+        void setLabel(std::string label);
 
-	void setText(std::string text);
-	void addText(std::string text);
-	void clearText(void);
+        void setText(std::string text);
+        void addText(std::string text);
+        void clearText(void);
 
-	void openItem(int index);
-	void answerDialog(int buttonID);
+        void openItem(int index);
+        void answerDialog(int buttonID);
 
-	// Custom listener:
-    void setColors(hEventArgs& args);
+        // Custom listener:
+        void setColors(hEventArgs& args);
 
-	// GUI color customization example:
-	void setDarkColors(void);
-	void setLedColor(int* red, int* green,int* blue);
+        // GUI color customization example:
+        void setDarkColors(void);
+        void setLedColor(int* red, int* green,int* blue);
 
 
 

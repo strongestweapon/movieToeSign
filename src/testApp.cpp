@@ -3,18 +3,21 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+
+    //gut setup
     gui.setup();
 
 	ofBackground(0);
     mapImg.loadImage("map/map.png");
     bEdit = false;
 
+    //scene manager setup
     manager.addScene("movies/red.mov",INTRO);
     manager.addScene("movies/blue.mov",MOVIEA);
     manager.addScene("movies/yellow.mov",MOVIEB);
     manager.addScene("movies/green.mov",OUTRO);
-    manager.addEffect("movies/kinect.mov",KINECTINPUT);
-    manager.addEffect("movies/sound.mov",SOUNDINPUT);
+//    manager.addEffect("movies/kinect.mov",KINECTINPUT);
+//    manager.addEffect("movies/sound.mov",SOUNDINPUT);
 
     //initialize scene & effect
     scene = INTRO;
@@ -22,9 +25,7 @@ void testApp::setup(){
     effect = NOEFFECT;
     effectControl = EFFECTOFF;
 
-
-    //initialize the maze
-
+    //maze setup
     maze.setMovieRect(manager.getMovieSize());
     maze.addeSign("192.168.0.100",8);
     maze.addeSign("192.168.0.101",8);
@@ -35,17 +36,19 @@ void testApp::setup(){
     maze.addeSign("192.168.0.106",8);
     maze.addeSign("192.168.0.107",8);
     maze.addeSign("192.168.0.108",8);
-
-
-
-
+    maze.setColumnRectSize(5);
 }
-
-
 
 //--------------------------------------------------------------
 void testApp::update(){
+    //get add or edit mode
     maze.getEditMode();
+
+    //change gui tap
+
+    //get gui value
+
+
     manager.update(scene,sceneControl,effect,effectControl);
 
 }
@@ -53,18 +56,17 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 
-    if(bEdit){
-        ofPushStyle();
-        ofSetColor(255);
-        mapImg.draw(20,20);
-        ofPopStyle();
-    }
-
     ofPushStyle();
     ofSetColor(255);
     manager.drawScene(0,0);
     ofPopStyle();
 
+    unsigned char * pixels = manager.getScenePixels();
+    maze.setColumnColorFromPixels(pixels);
+
+    ofPushMatrix();
+    maze.draw(0,0,DRAW2D);
+    ofPopMatrix();
 }
 
 //--------------------------------------------------------------

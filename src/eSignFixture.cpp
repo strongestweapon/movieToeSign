@@ -32,6 +32,7 @@ void eSignFixture::addColumn(int portNumber, float x, float y, int LEDNumber, bo
 void eSignFixture::addPort()
 {
     eSignPort port;
+    //port.borderColor=ofColor(255% (int)eSignPorts.size());
     eSignPorts.push_back(port);
 
 }
@@ -46,7 +47,13 @@ void eSignFixture::setColor(ofColor c)
     }
 }
 
-
+void eSignFixture::setColumnRectSize(int size)
+{
+    for(int i = 0; i <eSignPorts.size(); i++)
+    {
+        eSignPorts[i].setColumnRectSize(size);
+    }
+}
 
 ofColor eSignFixture::getColor()
 {
