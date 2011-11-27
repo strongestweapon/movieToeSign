@@ -21,10 +21,11 @@ class eSignRGBColumn
         ofColor getColorForNet(int posN);
 
         int RGBLedNumber;
+        float posX, posY;
 
     protected:
     private:
-        float posX, posY;
+
         bool direction;
         ofColor columnColor;
 

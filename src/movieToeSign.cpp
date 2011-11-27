@@ -95,7 +95,17 @@ void movieToeSign::addeSign(string UDPAddress, int numOfPorts)
 {
     eSignFixture eSign;
     eSign.setup(UDPAddress, numOfPorts);
+    eSign.addColumn(1,10,10,8,true);
+    eSign.addColumn(2,10,10,8,true);
+    eSign.addColumn(3,10,10,8,true);
+    eSign.addColumn(4,10,10,8,true);
+    eSign.addColumn(5,10,10,8,true);
+    eSign.addColumn(6,10,10,8,true);
+    eSign.addColumn(7,10,10,8,true);
+
+    ////////////////////////////////
     eSigns.push_back(eSign);
+
 
 }
 
@@ -116,9 +126,6 @@ void movieToeSign::setColumnColorFromPixels(unsigned char * pixels)
     //get color from tiled image and set colors for the columns
     //if a column is not yet added for a coordinates from image, ignore
     //loop added columns to set column colors based on saved column position
-
-
-
 
 
     for(int g = 0; g <eSigns.size(); g++)
@@ -186,6 +193,11 @@ void  movieToeSign::draw(float x, float y, drawMode)
     }
     cout << "-----------" << std::endl;
 
+    for(int i=0; i<8; i++) {
+        eSigns[0].eSignPorts[i].setColor(ofColor(255,0,0));
+    }
+
+     //// eSignUdp packets send
     for(int i=0; i<eSigns.size(); i++) {
         eSigns[i].update();
     }
