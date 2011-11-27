@@ -26,7 +26,8 @@ void testApp::setup(){
 
     //initialize the maze
 
-    maze.setMovieRect(manager.getMovieSize());
+    maze.guiSetup();
+    maze.setMovieRect(movieRect);
     maze.addeSign("192.168.1.11",8);
     maze.addeSign("192.168.1.12",8);
     maze.addeSign("192.168.1.13",8);
