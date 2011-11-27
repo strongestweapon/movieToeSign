@@ -21,26 +21,19 @@ void eSignRGBColumn::setup(float x, float y, int LEDNumber, bool direction, floa
 
     columnRect = ofRectangle(x,y,rectSize,rectSize);
     //UP: directon is true
-    if (direction == true){
-        for(int i = 0; i < LEDNumber;i++)
-        {
-            eSignRGB RGBLED;
-            RGBLED.posZ = i;
-            RGBLED.posNetwork = i;
-            eSignRGBs.push_back(RGBLED);
-        }
-    }
-    else //DOWN: direction is false
-    {
-        for(int i = 0; i < LEDNumber;i++)
-        {
-            eSignRGB RGBLED;
-            RGBLED.posZ = i;
-            RGBLED.posNetwork = LEDNumber-1-i;
-            eSignRGBs.push_back(RGBLED);
-        }
-    }
 
+
+    for(int i = 0; i < LEDNumber;i++)
+    {
+        eSignRGB RGBLED;
+        RGBLED.setPosition(x,y,i);
+        if (direction == true) {
+            RGBLED.setPosNetwork(i);
+        }else {
+            RGBLED.setPosNetwork(LEDNumber-1-i);
+        }
+        eSignRGBs.push_back(RGBLED);
+    }
 }
 
 void eSignRGBColumn::setColor(ofColor c)
@@ -51,7 +44,6 @@ void eSignRGBColumn::setColor(ofColor c)
     {
         eSignRGBs[i].setColor(c);
     }
-
 }
 
 ofColor eSignRGBColumn::getColor()

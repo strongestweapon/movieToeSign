@@ -10,13 +10,21 @@ class eSignRGB
         void setColor(ofColor c);
         ofColor getColor();
 
+        void setPosition(int x,int y,int z);
 
-        float posZ;
-        int posNetwork;
+        int getX();
+        int getY();
+        int getZ();
 
+        void setPosNetwork(int _posNetwork);
 
     private:
         ofColor LEDColor;
+
+        int posX;
+        int posY;
+        int posZ;
+        int posNetwork;
 
 };
 
