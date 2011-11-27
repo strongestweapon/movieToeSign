@@ -69,6 +69,10 @@ class movieToeSign: public hObject
         int movieLEDNumber;
         int portLEDNumber;
 
+        int fixtureNumber;
+        int portNumber;
+        int columnLEDNumber;
+        bool direction;
 
         //gui members
 
@@ -96,6 +100,11 @@ class movieToeSign: public hObject
         // Custom listener:
         void setColors(hEventArgs& args);
 
+        void setFixtureFromGui(hEventArgs& args);
+        void setPortFromGui(hEventArgs& args);
+        void setLEDNumFromGui(hEventArgs& args);
+
+
         // GUI color customization example:
         void setDarkColors(void);
         void setLedColor(int* red, int* green,int* blue);
@@ -113,9 +122,13 @@ class movieToeSign: public hObject
         ofTrueTypeFont * font;
         std::string myString;
 
-        hSlider*  slider1;
-        hSlider*  slider2;
-        hSlider*  slider3;
+        hButtonBox * fixtureButtonBox;
+        hButtonBox * portButtonBox;
+        hSlider * columnSlider;
+        hButtonBox * ledButtonBox;
+        hCheckBox * upCheckBox;
+        hCheckBox * bottomCheckBox;
+
 
 };
 
