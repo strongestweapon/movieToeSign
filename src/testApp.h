@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "movieToeSign.h"
 #include "sceneManager.h"
-#include "controlGui.h"
+
 
 class testApp : public ofBaseApp, public hObject{
 
@@ -28,8 +28,6 @@ class testApp : public ofBaseApp, public hObject{
         ofImage mapImg;
 
         bool bEdit;
-
-        //controlGui gui;
 
         movieToeSign maze;
         sceneManager manager;

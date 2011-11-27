@@ -10,7 +10,7 @@ movieToeSign::movieToeSign()
 
 movieToeSign::~movieToeSign()
 {
-    //dtor
+    exit();
 }
 
 void movieToeSign::mousePressed(ofMouseEventArgs& args)
@@ -340,10 +340,6 @@ void movieToeSign::guiSetup()
 	button1->setMessage("movieToeSign.start");
 
 	mainPanel->adaptPanelSize(gui->margin2, gui->margin2);
-	// void adaptPanelSize(int x, int y);
-	// If an object inside of a panel is bigger than the panel, the panel will grow to have the same size
-	// and then add also x,y to its size
-
 
 	gui->loadSettings("settings.xml");
 

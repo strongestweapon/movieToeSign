@@ -4,11 +4,32 @@
 	<File name="../../../addons/ofxXmlSettings/src/ofxXmlSettings.h" open="0" top="0" tabpos="5">
 		<Cursor position="55" topLine="0" />
 	</File>
+	<File name="../../../addons/ofxhGui/src/hButtonBox.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="1291" topLine="2" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hButtonBox.h" open="1" top="0" tabpos="15">
+		<Cursor position="1423" topLine="24" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hButtonBoxItem.cpp" open="1" top="0" tabpos="19">
+		<Cursor position="0" topLine="61" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hButtonBoxItem.h" open="1" top="0" tabpos="23">
+		<Cursor position="0" topLine="10" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hCheckBox.cpp" open="1" top="0" tabpos="18">
+		<Cursor position="2151" topLine="48" />
+	</File>
 	<File name="../../../addons/ofxhGui/src/hGui.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="16846" topLine="423" />
 	</File>
 	<File name="../../../addons/ofxhGui/src/hGui.h" open="0" top="0" tabpos="4">
 		<Cursor position="9482" topLine="233" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hListBox.cpp" open="1" top="0" tabpos="22">
+		<Cursor position="1280" topLine="15" />
+	</File>
+	<File name="../../../addons/ofxhGui/src/hListBox.h" open="1" top="0" tabpos="16">
+		<Cursor position="1492" topLine="85" />
 	</File>
 	<File name="../../../addons/ofxhGui/src/hPanel.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="6861" topLine="241" />
@@ -19,20 +40,23 @@
 	<File name="../../../addons/ofxhGui/src/hTextArea.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="5414" topLine="8" />
 	</File>
-	<File name="../../../addons/ofxhGui/src/hWidget.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="5977" topLine="208" />
+	<File name="../../../addons/ofxhGui/src/hWidget.cpp" open="1" top="0" tabpos="20">
+		<Cursor position="5977" topLine="46" />
 	</File>
-	<File name="../../../addons/ofxhGui/src/hWidget.h" open="0" top="0" tabpos="3">
-		<Cursor position="2523" topLine="44" />
+	<File name="../../../addons/ofxhGui/src/hWidget.h" open="1" top="0" tabpos="10">
+		<Cursor position="2351" topLine="45" />
 	</File>
-	<File name="../../../addons/ofxhUtils/src/hEvents/hEvents.cpp" open="1" top="0" tabpos="21">
-		<Cursor position="0" topLine="21" />
+	<File name="../../../addons/ofxhUtils/src/hEvents/hEvents.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="20716" topLine="610" />
 	</File>
-	<File name="../../../addons/ofxhUtils/src/hEvents/hEvents.h" open="1" top="0" tabpos="20">
-		<Cursor position="796" topLine="214" />
+	<File name="../../../addons/ofxhUtils/src/hEvents/hEvents.h" open="1" top="0" tabpos="13">
+		<Cursor position="10423" topLine="222" />
 	</File>
-	<File name="../../../addons/ofxhUtils/src/hEvents/hObject.h" open="1" top="0" tabpos="19">
-		<Cursor position="1306" topLine="60" />
+	<File name="../../../addons/ofxhUtils/src/hEvents/hObject.h" open="1" top="0" tabpos="11">
+		<Cursor position="2327" topLine="0" />
+	</File>
+	<File name="../../../addons/ofxhUtils/src/hEvents/hSymbols.h" open="1" top="0" tabpos="17">
+		<Cursor position="0" topLine="103" />
 	</File>
 	<File name="../../../addons/ofxhUtils/src/hTable/hTable.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="1508" topLine="26" />
@@ -40,61 +64,55 @@
 	<File name="config.make" open="0" top="0" tabpos="4">
 		<Cursor position="298" topLine="0" />
 	</File>
-	<File name="src/controlGui.cpp" open="1" top="0" tabpos="13">
-		<Cursor position="8938" topLine="222" />
+	<File name="src/eSignFixture.cpp" open="1" top="1" tabpos="25">
+		<Cursor position="911" topLine="24" />
 	</File>
-	<File name="src/controlGui.h" open="1" top="0" tabpos="12">
-		<Cursor position="708" topLine="7" />
+	<File name="src/eSignFixture.h" open="1" top="0" tabpos="24">
+		<Cursor position="62" topLine="6" />
 	</File>
-	<File name="src/eSignFixture.cpp" open="1" top="0" tabpos="15">
-		<Cursor position="1001" topLine="41" />
-	</File>
-	<File name="src/eSignFixture.h" open="1" top="0" tabpos="7">
-		<Cursor position="191" topLine="0" />
-	</File>
-	<File name="src/eSignPort.cpp" open="1" top="0" tabpos="6">
+	<File name="src/eSignPort.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="800" topLine="17" />
 	</File>
-	<File name="src/eSignPort.h" open="1" top="0" tabpos="5">
+	<File name="src/eSignPort.h" open="0" top="0" tabpos="5">
 		<Cursor position="307" topLine="0" />
 	</File>
-	<File name="src/eSignRGB.cpp" open="1" top="0" tabpos="17">
+	<File name="src/eSignRGB.cpp" open="0" top="0" tabpos="17">
 		<Cursor position="191" topLine="0" />
 	</File>
-	<File name="src/eSignRGB.h" open="1" top="0" tabpos="16">
+	<File name="src/eSignRGB.h" open="0" top="0" tabpos="16">
 		<Cursor position="36" topLine="0" />
 	</File>
-	<File name="src/eSignRGBColumn.cpp" open="1" top="0" tabpos="22">
-		<Cursor position="1356" topLine="34" />
+	<File name="src/eSignRGBColumn.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="555" topLine="12" />
 	</File>
-	<File name="src/eSignRGBColumn.h" open="1" top="0" tabpos="18">
+	<File name="src/eSignRGBColumn.h" open="1" top="0" tabpos="8">
 		<Cursor position="401" topLine="0" />
 	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="14">
+	<File name="src/main.cpp" open="0" top="0" tabpos="14">
 		<Cursor position="556" topLine="0" />
 	</File>
-	<File name="src/movieScene.cpp" open="1" top="0" tabpos="10">
+	<File name="src/movieScene.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="443" topLine="25" />
 	</File>
-	<File name="src/movieScene.h" open="1" top="0" tabpos="9">
+	<File name="src/movieScene.h" open="1" top="0" tabpos="5">
 		<Cursor position="236" topLine="0" />
 	</File>
-	<File name="src/movieToeSign.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="3368" topLine="135" />
+	<File name="src/movieToeSign.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="192" topLine="0" />
 	</File>
-	<File name="src/movieToeSign.h" open="1" top="0" tabpos="3">
-		<Cursor position="731" topLine="15" />
+	<File name="src/movieToeSign.h" open="1" top="0" tabpos="2">
+		<Cursor position="1157" topLine="39" />
 	</File>
-	<File name="src/sceneManager.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1839" topLine="64" />
+	<File name="src/sceneManager.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="2739" topLine="0" />
 	</File>
-	<File name="src/sceneManager.h" open="1" top="0" tabpos="1">
-		<Cursor position="1238" topLine="57" />
+	<File name="src/sceneManager.h" open="1" top="0" tabpos="7">
+		<Cursor position="517" topLine="30" />
 	</File>
-	<File name="src/testApp.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="1758" topLine="39" />
+	<File name="src/testApp.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="752" topLine="51" />
 	</File>
-	<File name="src/testApp.h" open="1" top="0" tabpos="11">
-		<Cursor position="846" topLine="12" />
+	<File name="src/testApp.h" open="1" top="0" tabpos="4">
+		<Cursor position="616" topLine="12" />
 	</File>
 </CodeBlocks_layout_file>

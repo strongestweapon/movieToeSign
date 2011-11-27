@@ -5,6 +5,16 @@ eSignFixture::eSignFixture()
     UDPAddress="";
     fixtureColor = ofColor(0,0,0);
 
+    rainbow[0] = ofColor(255,0,0);
+    rainbow[1] = ofColor(255,50,0);
+    rainbow[2] = ofColor(255,255,0);
+    rainbow[3] = ofColor(0,255,0);
+    rainbow[4] = ofColor(0,0,255);
+    rainbow[5] = ofColor(0,0,127);
+    rainbow[6] = ofColor(127,0,127);
+    rainbow[7] = ofColor(255);
+
+
 }
 
 eSignFixture::~eSignFixture()
@@ -32,7 +42,7 @@ void eSignFixture::addColumn(int portNumber, float x, float y, int LEDNumber, bo
 void eSignFixture::addPort()
 {
     eSignPort port;
-    //port.borderColor=ofColor(255% (int)eSignPorts.size());
+    port.borderColor=rainbow[eSignPorts.size()];
     eSignPorts.push_back(port);
 
 }

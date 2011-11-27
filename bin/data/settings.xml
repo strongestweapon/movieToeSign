@@ -1,1 +1,22 @@
-<gui_settings></gui_settings>
+<gui_settings>
+    <button_box>
+        <name>fixtureButtonBox</name>
+        <selection>1</selection>
+    </button_box>
+    <button_box>
+        <name>portButtonBox</name>
+        <selection>8</selection>
+    </button_box>
+    <button_box>
+        <name>ledButtonBox</name>
+        <selection>8</selection>
+    </button_box>
+    <check_box>
+        <name>upCheckBox</name>
+        <selected>false</selected>
+    </check_box>
+    <check_box>
+        <name>bottomCheckBox</name>
+        <selected>true</selected>
+    </check_box>
+</gui_settings>
