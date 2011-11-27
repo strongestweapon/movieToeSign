@@ -1,7 +1,7 @@
 #include "controlGui.h"
 
 
-void ControlGui::setup() {
+void controlGui::setup() {
     ofPushStyle();
 
     hGui * gui = hGui::getInstance();
@@ -234,12 +234,12 @@ void ControlGui::setup() {
 	// Add an object to the event engine the object, so it can receive events
 	// void hEvents::addObject(std::string objectName, hObject * obj)
 
-	events->addObject("ControlGui", this);
+	events->addObject("controlGui", this);
 	// Here we use testApp as object
-	// This is possible because ControlGui inherits from hObject
-	// Look at ControlGui.h to see the implementation
+	// This is possible because controlGui inherits from hObject
+	// Look at controlGui.h to see the implementation
 
-	// Maybe its better to create other objects instead of using ControlGui
+	// Maybe its better to create other objects instead of using controlGui
 	// to respond to the messages, in order to avoid conflicts caused
 	// by multiple inheritance
 	// This permits also to have the same message for different objects
@@ -260,12 +260,12 @@ void ControlGui::setup() {
 
 	// Set the message that the buttons will send when pressed
 	// The form of the message is "object.method"
-	button1->setMessage("ControlGui.start");
-	button2->setMessage("ControlGui.stop");
-	button3->setMessage("ControlGui.clear");
+	button1->setMessage("controlGui.start");
+	button2->setMessage("controlGui.stop");
+	button3->setMessage("controlGui.clear");
 
 	// This works because the start, stop and clear listeners are defined in hEvent.cpp
-	// and redefined for ControlGui (see below on the next methods)
+	// and redefined for controlGui (see below on the next methods)
 
 	// You can also create your own listeners anywhere
 	// (I will show that later)
@@ -306,9 +306,9 @@ void ControlGui::setup() {
 	// Here we use this feature to indicate that the widgets are part of a virtual group
 	// This is specially true when the widgets are used as radio buttons
 
-	checkbox2->setMessage("ControlGui.selectItem");
-	checkbox3->setMessage("ControlGui.selectItem");
-	checkbox4->setMessage("ControlGui.selectItem");
+	checkbox2->setMessage("controlGui.selectItem");
+	checkbox3->setMessage("controlGui.selectItem");
+	checkbox4->setMessage("controlGui.selectItem");
 
 	checkbox2->setIndex(1);
 	checkbox3->setIndex(2);
@@ -319,8 +319,8 @@ void ControlGui::setup() {
 	// We can also set the same message to the sliders to different sliders
 	// (here, the sliders that control the color)
 
-	slider4->setMessage("ControlGui.setValueToItem");
-	slider5->setMessage("ControlGui.setValueToItem");
+	slider4->setMessage("controlGui.setValueToItem");
+	slider5->setMessage("controlGui.setValueToItem");
 	slider4->setIndex(1);
 	slider5->setIndex(2);
 
@@ -328,7 +328,7 @@ void ControlGui::setup() {
 
 	// hTextBox * addTextBox(std::string name, hPanel * parent, int dispMode, int xx, int yy, int width, string s)
 	hTextBox * textBox1 = gui->addTextBox("textBox1", panel2,  HGUI_RIGHT, gui->margin2, 0, 100, "editable textbox");
-	textBox1->setMessage("ControlGui.setLabel");
+	textBox1->setMessage("controlGui.setLabel");
 
 	// The message of the textBox will be sent when the user types <return>
 
@@ -372,8 +372,8 @@ void ControlGui::setup() {
 		// An additional message2 can be set to perform another action when the text is cleared
 
 	textArea1->addTools(60, 1, "send", "clear");
-	textArea1->setMessage("ControlGui.setText");
-	textArea1->setMessage2("ControlGui.clearText");
+	textArea1->setMessage("controlGui.setText");
+	textArea1->setMessage2("controlGui.clearText");
 
 	// WARNING !!!!
 	// After hTextArea, HGUI_RIGHT and HGUI_BOTTOM does not work correctly
@@ -400,7 +400,7 @@ void ControlGui::setup() {
 	listBox1->addData("seven");
 	listBox1->addData("eight");
 
-	listBox1->setMessage("ControlGui.setLabel");
+	listBox1->setMessage("controlGui.setLabel");
 
 
 	listBox1->selectElement(1); // preselect an element (first element is 1)
@@ -418,7 +418,7 @@ void ControlGui::setup() {
 
 	buttonBox1->addItems(6, 4);
 	buttonBox1->selectItem(1); // preselect an item (first item is 1)
-	buttonBox1->setMessage("ControlGui.itemSetSelected");
+	buttonBox1->setMessage("controlGui.itemSetSelected");
 
 	// -------------------------------------------------------------------------------------
 
@@ -499,8 +499,8 @@ void ControlGui::setup() {
 		gui->addTextArea("textArea2", mainPanel2, HGUI_NEXT_ROW, gui->margin1, 0, 392, 200);
 
 	textArea2->addTools(100, 1, "send", "clear");
-	textArea2->setMessage("ControlGui.setText");
-	textArea2->setMessage2("ControlGui.clearText");
+	textArea2->setMessage("controlGui.setText");
+	textArea2->setMessage2("controlGui.clearText");
 
 	// WARNING !!!!
 	// After hTextArea, HGUI_RIGHT and HGUI_BOTTOM does not work correctly
@@ -528,7 +528,7 @@ void ControlGui::setup() {
 	h2DSlider * my2Dslider = gui->add2DSlider("my2Dslider", mainPanel2,  HGUI_BOTTOM, 0, 0, 152);
 
 	my2Dslider->setRange(0, 1); // default is -1, 1
-	my2Dslider->setMessage("ControlGui.setXY");
+	my2Dslider->setMessage("controlGui.setXY");
 
 	// -------------------------------------------------------------------------------------
 
@@ -536,24 +536,24 @@ void ControlGui::setup() {
 
 	hPanel * subPanel = gui->addPanel("subPanel", mainPanel2, HGUI_RIGHT, gui->margin2, 0, 241, 152, true);
 
-	// Create 2 buttons that will send their messages to a new listener created in ControlGui:
+	// Create 2 buttons that will send their messages to a new listener created in controlGui:
 
 	hButton * actionButton1 = gui->addButton("actionButton1", subPanel, HGUI_RIGHT, gui->margin2, gui->margin2, 104, "set dark colors");
 	hButton * actionButton2 = gui->addButton("actionButton2", subPanel, HGUI_RIGHT, gui->margin2, 0, 104, "set default colors");
 
 	// Create a new event listener using the method defined in this file :
-	events->addListener("setColors", this, &ControlGui::setColors);
+	events->addListener("setColors", this, &controlGui::setColors);
 	// "setColors" is the name of the method to call
 	// 'this' is the object
-	// '&ControlGui::setColors' is the method
+	// '&controlGui::setColors' is the method
 
-	actionButton1->setMessage("ControlGui.setColors"); // remember the format
-	actionButton2->setMessage("ControlGui.setColors");
+	actionButton1->setMessage("controlGui.setColors"); // remember the format
+	actionButton2->setMessage("controlGui.setColors");
 
 	actionButton1->setIndex(1); // the index is used as parameter by the listener
 	actionButton2->setIndex(2);
 
-	// Now you can look at void ControlGui::setColors(hEventArgs& args)
+	// Now you can look at void controlGui::setColors(hEventArgs& args)
 	// to see how it works
 
 	// -------------------------------------------------------------------------------------
@@ -574,7 +574,7 @@ void ControlGui::setup() {
 
 	// Set the same message to all sliders of the slider box
 	// The change the indexes of the sliders, use SliderBox::setStartIndex
-	sliderBox1->setMessage("ControlGui.setValueToItem");
+	sliderBox1->setMessage("controlGui.setValueToItem");
 
 	// Create a better contrast by changing the background color of the sliders:
 	sliderBox1->setBackgroundColor(0xD7D7D7);
@@ -629,8 +629,8 @@ void ControlGui::setup() {
 	hAlert * alertDialog =
 		gui->addAlert("alertDialog", NULL, HGUI_ABSOLUTE_POSITION, msgBoxX-19, msgBoxY+18, msgBoxXSize, msgBoxYSize);
 
-	alertDialog->setMessage("ControlGui.answerDialog");  // Set the message to send when the user answer yes (sends also the value 1)
-	alertDialog->setMessage2("ControlGui.answerDialog"); // Set the message to send when the user answer no  (sends also the value 2)
+	alertDialog->setMessage("controlGui.answerDialog");  // Set the message to send when the user answer yes (sends also the value 1)
+	alertDialog->setMessage2("controlGui.answerDialog"); // Set the message to send when the user answer no  (sends also the value 2)
 
 	// -------------------------------------------------------------------------------------
 
@@ -639,8 +639,8 @@ void ControlGui::setup() {
 	hButton * actionButton3 = gui->addButton("actionButton3", subPanel, HGUI_NEXT_ROW, gui->margin2, gui->margin2, 104, "open message");
 	hButton * actionButton4 = gui->addButton("actionButton4", subPanel, HGUI_RIGHT, gui->margin2, 0, 104, "open alert");
 
-	actionButton3->setMessage("ControlGui.openItem");
-	actionButton4->setMessage("ControlGui.openItem");
+	actionButton3->setMessage("controlGui.openItem");
+	actionButton4->setMessage("controlGui.openItem");
 
 	actionButton3->setIndex(1); // the index is used as parameter by the openItem listener
 	actionButton4->setIndex(2);
@@ -659,7 +659,7 @@ void ControlGui::setup() {
 
 // -------------------------------------------------------------------------------------
 
-void ControlGui::exit()
+void controlGui::exit()
 {
 // In this example, we save the state of our widgets when the application exits
 
@@ -677,19 +677,19 @@ void ControlGui::exit()
 //					(using prototypes defined in hObject.h)
 //--------------------------------------------------------------
 
-void ControlGui::start(void){
+void controlGui::start(void){
 	myString = "start";
 }
 
-void ControlGui::stop(void){
+void controlGui::stop(void){
 	myString = "stop";
 }
 
-void ControlGui::clear(void){
+void controlGui::clear(void){
 	myString = "";
 }
 
-void ControlGui::setLedColor(int* red, int* green,int* blue)
+void controlGui::setLedColor(int* red, int* green,int* blue)
 {
 
 	slider1->setIntVar(red);
@@ -699,17 +699,17 @@ void ControlGui::setLedColor(int* red, int* green,int* blue)
 
 //--------------------------------------------------------------
 
-void ControlGui::setValue(double val)
+void controlGui::setValue(double val)
 {
 	myString = ofToString(val);
 }
 
-void ControlGui::setValueToItem(double val, int index)
+void controlGui::setValueToItem(double val, int index)
 {
 	myString = ofToString(index) + " =>" + ofToString(val);
 }
 
-void ControlGui::setXY(double x, double y)
+void controlGui::setXY(double x, double y)
 {
 	myString = ofToString(x) + "\n" + ofToString(y);
 	xPct = x; yPct = y;
@@ -717,12 +717,12 @@ void ControlGui::setXY(double x, double y)
 
 //--------------------------------------------------------------
 
-void ControlGui::selectItem(int item)
+void controlGui::selectItem(int item)
 {
 	myString = ofToString(item);
 }
 
-void ControlGui::itemSetSelected(int item, bool flag)
+void controlGui::itemSetSelected(int item, bool flag)
 {
 	if(flag == true)
 		 myString = ofToString(item) + "(true)";
@@ -731,31 +731,31 @@ void ControlGui::itemSetSelected(int item, bool flag)
 
 //--------------------------------------------------------------
 
-void ControlGui::setLabel(std::string label)
+void controlGui::setLabel(std::string label)
 {
 	myString = label;
 }
 
-void ControlGui::setText(std::string text)
+void controlGui::setText(std::string text)
 {
 	myString = text; // Not very clever processing...
 	// it's just a test
 }
 
-void ControlGui::addText(std::string text)
+void controlGui::addText(std::string text)
 {
 	myString += text; // another possibility, add instead of set text
 	// (you have to change setMessage to "addText" to work)
 }
 
-void ControlGui::clearText(void)
+void controlGui::clearText(void)
 {
 	myString.clear();
 }
 
 //--------------------------------------------------------------
 
-void ControlGui::openItem(int item)
+void controlGui::openItem(int item)
 // Open dialogs:
 // #1 is a message box
 // #2 is an alert
@@ -781,7 +781,7 @@ void ControlGui::openItem(int item)
 	}
 }
 
-void ControlGui::answerDialog(int buttonID)
+void controlGui::answerDialog(int buttonID)
 // Called to process the answer of the alert dialog
 {
 	switch(buttonID) {
@@ -794,7 +794,7 @@ void ControlGui::answerDialog(int buttonID)
 					// Example of custom listener
 //--------------------------------------------------------------
 
-void ControlGui::setColors(hEventArgs& args)
+void controlGui::setColors(hEventArgs& args)
 // This fonction modify the set of colors used by the widgets
 // It show how to respond to custom events
 // and also how to customize the apparence of the interface
@@ -823,7 +823,7 @@ void ControlGui::setColors(hEventArgs& args)
 		hObject * object = events->getObject(args.objectName);
 		if(object == this) {
 			// (we could eventually create listeners that answer to messages sent to any object (or none)
-			// but here we want only to answer messages that belong to 'ControlGui'
+			// but here we want only to answer messages that belong to 'controlGui'
 
 			hGui * gui = hGui::getInstance(); // We need access to our gui engine
 
@@ -844,7 +844,7 @@ void ControlGui::setColors(hEventArgs& args)
 
 //--------------------------------------------------------------
 
-void ControlGui::setDarkColors(void)
+void controlGui::setDarkColors(void)
 // Example of changing the colors of the GUI
 {
 
@@ -886,7 +886,7 @@ void ControlGui::setDarkColors(void)
 
 //--------------------------------------------------------------
 
-void ControlGui::update()
+void controlGui::update()
 {
 // The variable curTime is controlled by the counterLabel widget:
 	curTime = ofGetElapsedTimeMillis();
@@ -901,91 +901,91 @@ void ControlGui::update()
 
 //--------------------------------------------------------------
 
-void ControlGui::draw()
+void controlGui::draw()
 {
-// the following variables are controlled by widgets:
-// backColor, drawFlag, xPct, yPct, myString
-
-	ofBackground(red, green, blue);
-
-	if(drawFlag == false) return;
-
-	//------(c)--------------------------------------
-	// (from polygonExample)
-	//       draw a star dynamically
-
-	int nTips = 5 + xPct * 60;
-	int nStarPts = nTips * 2;
-	float angleChangePerPt = TWO_PI / (float)nStarPts;
-	float innerRadius = 0 + yPct*80;
-	float outerRadius = 80;
-	float origx = 525;
-	float origy = 200;
-	float angle = 0;
-
-#if OF_VERSION < 7
-	ofSetColor(0xa16bca);
-#else
-	ofSetHexColor(0xa16bca);
-#endif
-
-	ofBeginShape();
-	for (int i = 0; i < nStarPts; i++){
-		if (i % 2 == 0) {
-			// inside point:
-			float x = origx + innerRadius * cos(angle);
-			float y = origy + innerRadius * sin(angle);
-			ofVertex(x,y);
-		} else {
-			// outside point
-			float x = origx + outerRadius * cos(angle);
-			float y = origy + outerRadius * sin(angle);
-			ofVertex(x,y);
-		}
-		angle += angleChangePerPt;
-	}
-	ofEndShape();
-
-	//---------------------------------
-
-	ofSetColor(0, 0, 0);
-	font->drawString(myString, 440, 20);
+//// the following variables are controlled by widgets:
+//// backColor, drawFlag, xPct, yPct, myString
+//
+//	ofBackground(red, green, blue);
+//
+//	if(drawFlag == false) return;
+//
+//	//------(c)--------------------------------------
+//	// (from polygonExample)
+//	//       draw a star dynamically
+//
+//	int nTips = 5 + xPct * 60;
+//	int nStarPts = nTips * 2;
+//	float angleChangePerPt = TWO_PI / (float)nStarPts;
+//	float innerRadius = 0 + yPct*80;
+//	float outerRadius = 80;
+//	float origx = 525;
+//	float origy = 200;
+//	float angle = 0;
+//
+//#if OF_VERSION < 7
+//	ofSetColor(0xa16bca);
+//#else
+//	ofSetHexColor(0xa16bca);
+//#endif
+//
+//	ofBeginShape();
+//	for (int i = 0; i < nStarPts; i++){
+//		if (i % 2 == 0) {
+//			// inside point:
+//			float x = origx + innerRadius * cos(angle);
+//			float y = origy + innerRadius * sin(angle);
+//			ofVertex(x,y);
+//		} else {
+//			// outside point
+//			float x = origx + outerRadius * cos(angle);
+//			float y = origy + outerRadius * sin(angle);
+//			ofVertex(x,y);
+//		}
+//		angle += angleChangePerPt;
+//	}
+//	ofEndShape();
+//
+//	//---------------------------------
+//
+//	ofSetColor(0, 0, 0);
+//	font->drawString(myString, 440, 20);
 }
 
 //--------------------------------------------------------------
-void ControlGui::keyPressed(int key){
+void controlGui::keyPressed(int key){
     hGui * gui = hGui::getInstance();
 
     if (key==' ') gui->hide();
 }
 
 //--------------------------------------------------------------
-void ControlGui::keyReleased(int key){
+void controlGui::keyReleased(int key){
 
 }
 
 //--------------------------------------------------------------
-void ControlGui::mouseMoved(int x, int y ){
+void controlGui::mouseMoved(int x, int y ){
 
 }
 
 //--------------------------------------------------------------
-void ControlGui::mouseDragged(int x, int y, int button){
+void controlGui::mouseDragged(int x, int y, int button){
 
 }
 
 //--------------------------------------------------------------
-void ControlGui::mousePressed(int x, int y, int button){
+void controlGui::mousePressed(int x, int y, int button){
  	// cout << x << " " << y << endl;
 
 }
 
 //--------------------------------------------------------------
-void ControlGui::mouseReleased(int x, int y, int button){
+void controlGui::mouseReleased(int x, int y, int button){
 
 }
 
 //--------------------------------------------------------------
-void ControlGui::windowResized(int w, int h){
+void controlGui::windowResized(int w, int h){
 
 }

@@ -1,2 +1,10 @@
 # IGNORE MOVIE FILES #
 *.mov
+
+# IGNORE COMPILED RESULTS #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so

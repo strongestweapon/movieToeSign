@@ -3,6 +3,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    gui.setup();
 
 	ofBackground(0);
     mapImg.loadImage("map/map.png");
@@ -34,6 +35,9 @@ void testApp::setup(){
     maze.addeSign("192.168.0.106",8);
     maze.addeSign("192.168.0.107",8);
     maze.addeSign("192.168.0.108",8);
+
+
+
 
 }
 

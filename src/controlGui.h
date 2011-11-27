@@ -13,7 +13,7 @@
 #include "hGui_all.h"
 
 
-class ControlGui : public ofBaseApp, public hObject {
+class controlGui : public ofBaseApp, public hObject {
 	public:
 		void setup();
 		void update();

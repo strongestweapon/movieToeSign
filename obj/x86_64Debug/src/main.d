@@ -255,7 +255,7 @@ obj/x86_64Debug/./src/main.d: src/main.cpp \
  ../../../libs/openFrameworks/3d/ofEasyCam.h src/testApp.h \
  src/movieToeSign.h src/eSignFixture.h src/eSignPort.h \
  src/eSignRGBColumn.h src/eSignRGB.h src/sceneManager.h src/movieScene.h \
- ../../../addons/ofxhUtils/src/hEvents/hEvents.h \
+ src/controlGui.h ../../../addons/ofxhUtils/src/hEvents/hEvents.h \
  ../../../addons/ofxhUtils/src/hEvents/hSymbols.h \
  ../../../addons/ofxhUtils/src/hEvents/hObject.h \
  ../../../addons/ofxhUtils/src/hEvents/hObject.h \
@@ -856,6 +856,8 @@ src/eSignRGB.h:
 src/sceneManager.h:
 
 src/movieScene.h:
+
+src/controlGui.h:
 
 ../../../addons/ofxhUtils/src/hEvents/hEvents.h:
 
