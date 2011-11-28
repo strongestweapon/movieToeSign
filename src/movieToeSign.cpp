@@ -114,7 +114,18 @@ editModeType movieToeSign::getEditMode()
     return editMode;
 }
 
+void movieToeSign::addMap(string mapPath)
+{
+    mapImg.loadImage(mapPath);
+    if (mapImg.width > movieRect. width || mapImg.height > movieRect.height)
+    {
+        mapImg.resize(1024,768);
+    }
 
+
+
+
+}
 void movieToeSign::addeSign(string UDPAddress, int numOfPorts)
 {
     eSignFixture eSign;
@@ -264,17 +275,28 @@ void movieToeSign::draw2D(float x, float y)
 
 void movieToeSign::draw3D(float x, float y)
 {
+    glEnable(GL_DEPTH_TEST);
+    cam.cacheMatrices();
+    cam.begin(movieRect);
     ofPushStyle();
     ofPushMatrix();
+    ofVec3f ray1 = cam.screenToWorld( ofVec3f( mouseX, mouseY, -1),movieRect );
+    ofVec3f ray2 = cam.screenToWorld( ofVec3f( mouseX, mouseY, 1),movieRect );
 
-    cam.begin(movieRect);
+
+
+
     ofTranslate(-movieRect.width/2,movieRect.height/2);
     ofScale(1,-1,1);
+    //draw selected column
+
     ofPushStyle();
-    ofFill();
-    ofSetColor(180);
-    ofRect(movieRect);
+    if(mapImg.isAllocated())
+    {
+        mapImg.draw(0,0,-5);
+    }
     ofPopStyle();
+
     for(int g = 0; g <eSigns.size(); g++)
     {
         for(int h = 0; h< eSigns[g].eSignPorts.size(); h++)
@@ -324,10 +346,38 @@ void movieToeSign::draw3D(float x, float y)
         }
     }
 
-
-    cam.end();
     ofPopMatrix();
     ofPopStyle();
+
+
+
+        // if(mouseOnMovie){
+        ofPushStyle();
+        ofSetColor(255,0,0);
+        //ofSetLineWidth(3);
+        //ofSphere(ray1, 0.5);
+        ofFill();
+        ofSphere(ray1, 0.5);
+        cout<< "ray1: "<<' ';
+        cout<< ray1.x<<'\t';
+        cout<< ray1.y<<'\t';
+        cout<< ray1.z<<endl;
+
+        //ofLine(ofPoint(ray1), ofPoint(ray2));
+//        ofLine(mouseX,mouseY-5,10,mouseX,mouseY+5, 10);
+//        ofLine(mouseX-5,mouseY,10,mouseX+5,mouseY, 10);
+        ofPopStyle();
+   // }
+    cam.end();
+    glDisable(GL_DEPTH_TEST);
+
+    ofPushStyle();
+    ofNoFill();
+    ofSetLineWidth(10);
+    ofSetColor(0,0,255);
+    ofRect(movieRect);
+    ofPopStyle();
+
 }
 
 void movieToeSign::drawStatus(float x, float y, int fixNum, int portNum)

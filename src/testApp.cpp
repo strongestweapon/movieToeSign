@@ -5,7 +5,7 @@
 void testApp::setup(){
 
 	ofBackground(0);
-    mapImg.loadImage("map/map.png");
+
     bEdit = false;
 
     //scene manager setup
@@ -28,6 +28,7 @@ void testApp::setup(){
     //maze setup
     maze.guiSetup();
     maze.setMovieRect(movieRect);
+    maze.addMap("map/map.png");
     maze.addeSign("192.168.0.100",8);
     maze.addeSign("192.168.0.101",8);
     maze.addeSign("192.168.0.102",8);
@@ -46,6 +47,7 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 
+    //example of how to gec OSC messages
 	while( receiver.hasWaitingMessages() )
 	{
 		// get the next message

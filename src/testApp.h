@@ -29,9 +29,6 @@ class testApp : public ofBaseApp, public hObject{
 		void gotMessage(ofMessage msg);
 
 
-        //map image
-        ofImage mapImg;
-
         bool bEdit;
 
         movieToeSign maze;

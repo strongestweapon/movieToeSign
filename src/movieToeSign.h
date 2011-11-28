@@ -31,6 +31,8 @@ class movieToeSign: public hObject
 
         void setMovieRect(ofRectangle rect);
         void setColumnRectSize(int size);
+
+        void addMap(string mapPath);
         void addeSign(string UDPAddress, int numOfPorts);
         void addColumn(int fixtureNumber, int portNumber, float x, float y, int LEDNumber, bool direction);
 
@@ -59,6 +61,7 @@ class movieToeSign: public hObject
         void guiSetup();
 
     private:
+        ofImage mapImg;
         int movWidth;
         int movHeight;
 
