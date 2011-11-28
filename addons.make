@@ -1,3 +1,4 @@
 ofxXmlSettings 
 ofxhGui 
 ofxhUtils
+ofxOsc

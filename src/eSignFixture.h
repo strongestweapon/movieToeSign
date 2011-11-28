@@ -2,12 +2,6 @@
 #include "ofMain.h"
 #include "eSignPort.h"
 
-
-
-
-
-
-
 class eSignFixture
 {
     public:

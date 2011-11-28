@@ -19,7 +19,7 @@ void eSignRGBColumn::setup(float x, float y, int LEDNumber, bool direction, int 
     //3. assign z postion and network Postion of eSignRGB based on direction
     //4. push eSignRGB
 
-
+    RGBLedNumber = LEDNumber;
     columnRect = ofRectangle(x,y,rectSize,rectSize);
     //UP: directon is true
     if (direction == true){

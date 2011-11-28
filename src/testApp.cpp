@@ -9,7 +9,8 @@ void testApp::setup(){
     bEdit = false;
 
     //scene manager setup
-    manager.addScene("movies/red.mov",INTRO);
+    manager.addScene("movies/color.mov",INTRO);
+    //manager.addScene("movies/red.mov",INTRO);
     manager.addScene("movies/blue.mov",MOVIEA);
     manager.addScene("movies/yellow.mov",MOVIEB);
     manager.addScene("movies/green.mov",OUTRO);
@@ -37,13 +38,33 @@ void testApp::setup(){
     maze.addeSign("192.168.0.107",8);
     maze.addeSign("192.168.0.108",8);
     maze.setColumnRectSize(10); //after we assign eSigns and Ports, we change the columnRect size recursively
+    dMode = DRAW2D;
+
+    receiver.setup( PORT );
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    //get add or edit mode
 
-    maze.getEditMode();
+	while( receiver.hasWaitingMessages() )
+	{
+		// get the next message
+		ofxOscMessage m;
+		receiver.getNextMessage( &m );
+
+		// check for mouse moved message
+		if ( m.getAddress() == "/scene" )
+		{
+			// both the arguments are int32's
+			scene = (sceneType)m.getArgAsInt32( 0 );
+			sceneControl = (sceneControlType)m.getArgAsInt32( 1 );
+		}
+		else
+		{
+			return;
+		}
+
+	}
 
     manager.update(scene,sceneControl,effect,effectControl);
 
@@ -52,16 +73,20 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 
+    if(dMode == DRAW2D){
     ofPushStyle();
     ofSetColor(255);
     manager.drawScene(0,0);
     ofPopStyle();
+    }
 
     unsigned char * pixels = manager.getScenePixels();
     maze.setColumnColorFromPixels(pixels);
 
     ofPushMatrix();
-    maze.draw(0,0,DRAW2D);
+
+    maze.draw(0,0,dMode);
+
     ofPopMatrix();
 }
 
@@ -87,6 +112,9 @@ void testApp::keyPressed  (int key){
         case '4':
         scene = OUTRO;
         sceneControl = SCENEPLAY;
+        break;
+        case ' ':
+        dMode = DRAW3D;
         break;
     }
 
@@ -114,6 +142,9 @@ void testApp::keyReleased(int key){
         case '4':
         scene = OUTRO;
         sceneControl = SCENESTOP;
+        break;
+        case ' ':
+        dMode = DRAW2D;
         break;
 
     }

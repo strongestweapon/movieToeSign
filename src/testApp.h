@@ -4,6 +4,11 @@
 #include "movieToeSign.h"
 #include "sceneManager.h"
 
+#include "ofxOsc.h"
+
+// listen on port 12345
+#define PORT 12345
+
 
 class testApp : public ofBaseApp, public hObject{
 
@@ -36,7 +41,9 @@ class testApp : public ofBaseApp, public hObject{
         effectType effect;
         effectControlType effectControl;
 
+        drawMode dMode;
 
+        ofxOscReceiver	receiver;
 
 };
 
