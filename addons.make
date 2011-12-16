@@ -1,3 +1,3 @@
-ofxXmlSettings 
-ofxhGui 
+ofxXmlSettings
+ofxhGui
 ofxhUtils
